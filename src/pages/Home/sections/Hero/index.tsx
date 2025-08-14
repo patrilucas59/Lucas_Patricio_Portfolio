@@ -3,19 +3,35 @@ import Avatar from '../../../../assets/images/Foto-de-Perfil.jpeg'
 import React from 'react';
 import DownloadIcon from '@mui/icons-material/Download';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
+import { StyledButton } from '../../../../components/Button';
 
 
 const Hero = () => {
+  const handleDownloadCV = () => {
+    const link = document.createElement('a');
+    link.href = '/currículo.pdf';
+    link.download = 'Lucas-Patrício_Currículo.pdf';
+    document.body.appendChild(link)
+    link.click();
+    document.body.removeChild(link);
+  }
+
+  const handleContactMe = () => {
+    window.location.href = 'mailto:patriciolucas059@gmail.com';
+  }
 
   const StyledHero = styled('div')(() => ({
-    backgroundColor: 'black',
+    backgroundColor: 'grey',
     height: '100vh',
+    display: 'flex',
+    alignItems: 'center',
   }))
 
   const StyledImg = styled('img')(() => ({
-    width: '100%',
+    width: '30%',
     borderRadius: '50%',
   }))
+
 
   return (
     <>
@@ -28,18 +44,26 @@ const Hero = () => {
             <Grid item xs={12} md={8}>
               <Typography color='primary' variant='h1' textAlign='center'>Lucas Patrício da Silva</Typography>
               <Typography color='primary' variant='h2' textAlign='center'>Web Development</Typography>
-              <Grid container display='flex' justifyContent='center'>
+              <Grid container display='flex' justifyContent='center' spacing={3}>
                 <Grid item xs={12} md={4} display='flex' justifyContent='center'>
-                  <Button>
-                    <DownloadIcon />
-                    Baixar CV
-                  </Button>
+                  <StyledButton
+                    size='medium'
+                    variant='contained'
+                    onClick={handleDownloadCV}
+                  >
+                    <DownloadIcon style={{ marginRight: '8px' }} />
+                    Download CV
+                  </StyledButton>
                 </Grid>
                 <Grid item xs={12} md={6} display='flex' justifyContent='center'>
-                  <Button>
-                    <MailOutlineIcon />
+                  <StyledButton
+                    size="medium"
+                    variant="outlined"
+                    onClick={handleContactMe}
+                  >
+                    <MailOutlineIcon style={{ marginRight: '8px' }} />
                     Contact Me
-                  </Button>
+                  </StyledButton>
                 </Grid>
               </Grid>
             </Grid>
