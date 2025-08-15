@@ -28,7 +28,8 @@ const Hero = () => {
   }))
 
   const StyledImg = styled('img')(() => ({
-    width: '30%',
+    width: '100%',
+    maxWidth: '350px',
     borderRadius: '50%',
   }))
 
@@ -38,7 +39,7 @@ const Hero = () => {
       <StyledHero>
         <Container maxWidth='lg'>
           <Grid container spacing={2}>
-            <Grid item xs={12} md={4}>
+            <Grid item xs={12} md={4} display='flex' justifyContent='center'>
               <StyledImg src={Avatar} alt="Foto-de-Perfil" />
             </Grid>
             <Grid item xs={12} md={8}>
