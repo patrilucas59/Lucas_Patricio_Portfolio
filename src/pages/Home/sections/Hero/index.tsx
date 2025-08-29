@@ -1,5 +1,5 @@
 import { Button, Container, Grid, styled, Typography } from '@mui/material'
-import Avatar from '../../../../assets/images/Foto-de-Perfil.jpeg'
+import Avatar from '../../../../assets/images/Foto-de-Perfil.jpeg';
 import React from 'react';
 import DownloadIcon from '@mui/icons-material/Download';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
@@ -56,7 +56,7 @@ const Hero = () => {
                     Download CV
                   </StyledButton>
                 </Grid>
-                <Grid item xs={12} md={6} display='flex' justifyContent='center'>
+                <Grid item xs={6} md={6} display='flex' justifyContent='center'>
                   <StyledButton
                     size="medium"
                     variant="outlined"
