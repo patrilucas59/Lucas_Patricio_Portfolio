@@ -1,4 +1,4 @@
-import { Button, Container, Grid, styled, Typography } from '@mui/material'
+import { Button, Container, Grid, styled, Typography, useTheme } from '@mui/material'
 import Avatar from '../../../../assets/images/Foto-de-Perfil.jpeg';
 import React from 'react';
 import DownloadIcon from '@mui/icons-material/Download';
@@ -20,17 +20,17 @@ const Hero = () => {
     window.location.href = 'mailto:patriciolucas059@gmail.com';
   }
 
-  const StyledHero = styled('div')(() => ({
-    backgroundColor: 'grey',
+  const StyledHero = styled('div')(({ theme }) => ({
+    backgroundColor: theme.palette.primary.main,
     height: '100vh',
     display: 'flex',
     alignItems: 'center',
   }))
 
-  const StyledImg = styled('img')(() => ({
+  const StyledImg = styled('img')(({ theme }) => ({
     width: '100%',
-    maxWidth: '350px',
     borderRadius: '50%',
+    border: `1px solid ${theme.palette.primary.contrastText}`
   }))
 
 
@@ -43,13 +43,14 @@ const Hero = () => {
               <StyledImg src={Avatar} alt="Foto-de-Perfil" />
             </Grid>
             <Grid item xs={12} md={8}>
-              <Typography color='primary' variant='h1' textAlign='center'>Lucas Patrício da Silva</Typography>
-              <Typography color='primary' variant='h2' textAlign='center'>Web Development</Typography>
+              <Typography color='primary.contrastText' variant='h1' textAlign='center'>Lucas Patrício da Silva</Typography>
+              <Typography color='primary.contrastText' variant='h2' textAlign='center'>Web Development</Typography>
               <Grid container display='flex' justifyContent='center' spacing={3}>
                 <Grid item xs={12} md={4} display='flex' justifyContent='center'>
                   <StyledButton
                     size='medium'
                     variant='contained'
+                    color='primary'
                     onClick={handleDownloadCV}
                   >
                     <DownloadIcon style={{ marginRight: '8px' }} />
@@ -61,6 +62,7 @@ const Hero = () => {
                     size="medium"
                     variant="outlined"
                     onClick={handleContactMe}
+                    color='secondary'
                   >
                     <MailOutlineIcon style={{ marginRight: '8px' }} />
                     Contact Me
@@ -70,7 +72,7 @@ const Hero = () => {
             </Grid>
           </Grid>
         </Container>
-      </StyledHero>
+      </StyledHero >
     </>
   )
 }

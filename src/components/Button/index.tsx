@@ -3,10 +3,11 @@ import { Button } from "@mui/material"
 import React, { ReactNode } from 'react'
 
 export type ButtonType = {
-  size?: 'small' | 'medium' | 'large'
-  variant?: 'contained' | 'outlined' | 'text'
-  onClick: () => void
-  children: ReactNode
+  size?: 'small' | 'medium' | 'large';
+  variant?: 'contained' | 'outlined' | 'text';
+  onClick: () => void;
+  children: ReactNode;
+  color?: 'primary' | 'secondary' | 'inherit' | 'success' | 'error' | 'info' | 'warning';
 }
 
 export function StyledButton(props: ButtonType) {
@@ -14,6 +15,7 @@ export function StyledButton(props: ButtonType) {
     <Button
       size={props.size}
       variant={props.variant}
+      color={props.color}
       onClick={props.onClick}
     >
       {props.children}
