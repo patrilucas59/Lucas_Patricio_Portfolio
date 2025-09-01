@@ -1,4 +1,4 @@
-import { Button, Container, Grid, styled, Typography, useTheme } from '@mui/material'
+import { Box, Button, Container, Grid, styled, Typography, useTheme } from '@mui/material'
 import Avatar from '../../../../assets/images/Foto-de-Perfil.jpeg';
 import React from 'react';
 import DownloadIcon from '@mui/icons-material/Download';
@@ -40,7 +40,9 @@ const Hero = () => {
         <Container maxWidth='lg'>
           <Grid container spacing={2}>
             <Grid item xs={12} md={4} display='flex' justifyContent='center'>
-              <StyledImg src={Avatar} alt="Foto-de-Perfil" />
+              <Box position='relative' textAlign='center'>
+                <StyledImg src={Avatar} alt="Foto-de-Perfil" />
+              </Box>
             </Grid>
             <Grid item xs={12} md={8}>
               <Typography color='primary.contrastText' variant='h1' textAlign='center'>Lucas Patrício da Silva</Typography>
