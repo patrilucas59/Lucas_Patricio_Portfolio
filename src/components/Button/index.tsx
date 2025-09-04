@@ -13,7 +13,7 @@ export type ButtonType = {
 const AnimatedButton = styled(Button)`
   position: relative;
   overflow: hidden;
-  transition: color 0.4s ease;
+  transition: color 2.4s ease;
 
   &::before,
   &::after,
@@ -21,7 +21,7 @@ const AnimatedButton = styled(Button)`
   span::after {
     content: "";
     position: absolute;
-    background-color: #d9d9e2;
+    background-color: #9f9fac;
     transition: all 0.3s ease;
   }
 
