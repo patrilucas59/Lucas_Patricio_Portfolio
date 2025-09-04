@@ -1,6 +1,6 @@
 import { Box, Button, Container, Grid, styled, Typography, useTheme } from '@mui/material'
-import Avatar from '../../../../assets/images/Foto-de-Perfil.jpeg';
 import React from 'react';
+import Avatar from '../../../../assets/images/Foto-de-Perfil.jpeg';
 import DownloadIcon from '@mui/icons-material/Download';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { StyledButton } from '../../../../components/Button';
@@ -46,7 +46,7 @@ const Hero = () => {
             </Grid>
             <Grid item xs={12} md={8}>
               <Typography color='primary.contrastText' variant='h1' textAlign='center'>Lucas Patrício da Silva</Typography>
-              <Typography color='primary.contrastText' variant='h2' textAlign='center'>Web Development</Typography>
+              <Typography color='primary.contrastText' variant='h2' textAlign='center'>Front-end Developer</Typography>
               <Grid container display='flex' justifyContent='center' spacing={3}>
                 <Grid item xs={12} md={4} display='flex' justifyContent='center'>
                   <StyledButton
@@ -63,8 +63,8 @@ const Hero = () => {
                   <StyledButton
                     size="medium"
                     variant="outlined"
-                    onClick={handleContactMe}
                     color='secondary'
+                    onClick={handleContactMe}
                   >
                     <MailOutlineIcon style={{ marginRight: '8px' }} />
                     Contact Me
