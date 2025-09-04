@@ -3,7 +3,11 @@ import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import { StyledButton } from '../Button';
 
-const NavBar = () => {
+interface NavBarProps {
+  onNavigate: (section: string) => void
+}
+
+const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -53,7 +57,13 @@ const NavBar = () => {
           </>
         ) : (
           <>
-            <MenuItem sx={{ '&:hover': { backgroundColor: 'black', color: '#fff' } }}>
+            <MenuItem onClick={() => {
+              handleClose();
+              onNavigate('about');
+            }}
+              sx={{
+                '&:hover': { backgroundColor: 'black', color: '#fff' }
+              }}>
               About
             </MenuItem>
             <MenuItem sx={{ '&:hover': { backgroundColor: 'black', color: '#fff' } }}>

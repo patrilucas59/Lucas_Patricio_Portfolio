@@ -45,9 +45,9 @@ const Hero = () => {
               </Box>
             </Grid>
             <Grid item xs={12} md={8}>
-              <Typography color='primary.contrastText' variant='h1' textAlign='center'>Lucas Patrício da Silva</Typography>
+              <Typography color='primary.contrastText' variant='h1' textAlign='center'>Lucas Patrício</Typography>
               <Typography color='primary.contrastText' variant='h2' textAlign='center'>Front-end Developer</Typography>
-              <Grid container display='flex' justifyContent='center' spacing={3}>
+              <Grid container display='flex' justifyContent='center' spacing={3} mt={1}>
                 <Grid item xs={12} md={4} display='flex' justifyContent='center'>
                   <StyledButton
                     size='medium'
