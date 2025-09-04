@@ -1,5 +1,4 @@
 import { Box, Button, Container, Grid, styled, Typography, useTheme } from '@mui/material'
-import React from 'react';
 import Avatar from '../../../../assets/images/Foto-de-Perfil.jpeg';
 import DownloadIcon from '@mui/icons-material/Download';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
