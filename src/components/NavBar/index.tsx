@@ -53,9 +53,15 @@ const NavBar = () => {
           </>
         ) : (
           <>
-            <MenuItem>About</MenuItem>
-            <MenuItem>Skills</MenuItem>
-            <MenuItem>Projects</MenuItem>
+            <MenuItem sx={{ '&:hover': { backgroundColor: 'black', color: '#fff' } }}>
+              About
+            </MenuItem>
+            <MenuItem sx={{ '&:hover': { backgroundColor: 'black', color: '#fff' } }}>
+              Skills
+            </MenuItem>
+            <MenuItem sx={{ '&:hover': { backgroundColor: 'black', color: '#fff' } }}>
+              Projects
+            </MenuItem>
           </>
         )}
       </StyledToolbar>

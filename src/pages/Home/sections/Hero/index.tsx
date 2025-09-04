@@ -51,8 +51,8 @@ const Hero = () => {
                 <Grid item xs={12} md={4} display='flex' justifyContent='center'>
                   <StyledButton
                     size='medium'
-                    variant='contained'
-                    color='primary'
+                    variant='outlined'
+                    color='info'
                     onClick={handleDownloadCV}
                   >
                     <DownloadIcon style={{ marginRight: '8px' }} />
@@ -63,7 +63,7 @@ const Hero = () => {
                   <StyledButton
                     size="medium"
                     variant="outlined"
-                    color='secondary'
+                    color='info'
                     onClick={handleContactMe}
                   >
                     <MailOutlineIcon style={{ marginRight: '8px' }} />
