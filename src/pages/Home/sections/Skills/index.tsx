@@ -11,8 +11,8 @@ const Skills = () => {
         py: 8,
       }}
     >
-      <Container>
-        <Typography>
+      <Container maxWidth='lg'>
+        <Typography variant="h3" fontWeight={700} textAlign="center" mb={4}>
           Skills
         </Typography>
         <Grid container spacing={3} justifyContent="center">

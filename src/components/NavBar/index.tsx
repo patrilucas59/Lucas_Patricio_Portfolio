@@ -75,7 +75,13 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
               }}>
               Skills
             </MenuItem>
-            <MenuItem sx={{ '&:hover': { backgroundColor: 'black', color: '#fff' } }}>
+            <MenuItem onClick={() => {
+              handleClose();
+              onNavigate('projects')
+            }}
+              sx={{
+                '&:hover': { backgroundColor: 'black', color: '#fff' }
+              }}>
               Projects
             </MenuItem>
           </>

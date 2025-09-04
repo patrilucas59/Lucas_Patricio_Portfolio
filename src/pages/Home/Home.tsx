@@ -4,10 +4,12 @@ import Footer from '../../components/Footer'
 import { useRef } from 'react'
 import About from './sections/About'
 import Skills from './sections/Skills'
+import Projects from './sections/Projects'
 
 const Home = () => {
   const aboutRef = useRef<HTMLDivElement>(null)
   const skillsRef = useRef<HTMLDivElement>(null)
+  const projectsRef = useRef<HTMLDivElement>(null)
 
   const scrollToSection = (section: string) => {
     if (section === 'about' && aboutRef.current) {
@@ -15,6 +17,9 @@ const Home = () => {
     }
     if (section === 'skills' && skillsRef.current) {
       skillsRef.current.scrollIntoView({ behavior: 'smooth' })
+    }
+    if (section === 'projects' && projectsRef.current) {
+      skillsRef.current?.scrollIntoView({ behavior: 'smooth' })
     }
   }
 
@@ -24,6 +29,7 @@ const Home = () => {
       <Hero />
       <div ref={aboutRef}><About /> </div>
       <div ref={skillsRef}><Skills />  </div>
+      <div ref={projectsRef}><Projects /></div>
       <Footer />
     </>
   )
