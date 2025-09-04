@@ -5,7 +5,7 @@ import React, { ReactNode } from 'react'
 export type ButtonType = {
   size?: 'small' | 'medium' | 'large';
   variant?: 'contained' | 'outlined' | 'text';
-  onClick: () => void;
+  onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: ReactNode;
   color?: 'primary' | 'secondary' | 'inherit' | 'success' | 'error' | 'info' | 'warning';
 }

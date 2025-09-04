@@ -1,23 +1,66 @@
-import { AppBar, MenuItem, styled, Toolbar } from '@mui/material'
-import React from 'react'
+import { AppBar, Box, IconButton, Menu, MenuItem, styled, Toolbar, useMediaQuery, useTheme } from '@mui/material'
+import React, { useState } from 'react'
+import MenuIcon from '@mui/icons-material/Menu';
+import { StyledButton } from '../Button';
 
 const NavBar = () => {
+  const theme = useTheme();
+  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
+  const open = Boolean(anchorEl);
+
+  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
+    setAnchorEl(event.currentTarget);
+  }
+
+  const handleClose = () => setAnchorEl(null);
+
   const StyledToolbar = styled(Toolbar)(() => ({
     display: 'flex',
-    justifyContent: 'space-evenly',
-  }))
+    justifyContent: isMobile ? 'flex-end' : 'space-evenly',
+    alignItems: 'center',
+  }));
+
 
   return (
-    <>
-      <AppBar position='absolute'>
-        <StyledToolbar>
-          <MenuItem>About</MenuItem>
-          <MenuItem>Skills</MenuItem>
-          <MenuItem>Projects</MenuItem>
-        </StyledToolbar>
-      </AppBar>
-    </>
+    <AppBar position='fixed'>
+      <StyledToolbar>
+        {isMobile ? (
+          <>
+            <StyledButton
+              size='small'
+              variant='contained'
+              color='primary'
+              onClick={handleMenuOpen}
+            >
+              <MenuIcon />
+            </StyledButton>
+            <Menu
+              anchorEl={anchorEl}
+              open={open}
+              onClose={handleClose}
+              anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
+              transformOrigin={{ vertical: 'top', horizontal: 'right' }}
+              keepMounted
+              slotProps={{
+                paper: { sx: { mt: 1, minWidth: 180 } },
+              }}
+            >
+              <MenuItem onClick={handleMenuOpen}>About</MenuItem>
+              <MenuItem onClick={handleMenuOpen}>Skills</MenuItem>
+              <MenuItem onClick={handleMenuOpen}>Projects</MenuItem>
+            </Menu>
+          </>
+        ) : (
+          <>
+            <MenuItem>About</MenuItem>
+            <MenuItem>Skills</MenuItem>
+            <MenuItem>Projects</MenuItem>
+          </>
+        )}
+      </StyledToolbar>
+    </AppBar>
   )
 }
 
-export default NavBar
+export default NavBar;
