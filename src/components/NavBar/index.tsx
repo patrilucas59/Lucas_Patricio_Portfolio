@@ -21,7 +21,7 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
 
   const StyledToolbar = styled(Toolbar)(() => ({
     display: 'flex',
-    justifyContent: isMobile ? 'flex-end' : 'space-evenly',
+    justifyContent: isMobile ? 'left' : 'space-evenly',
     alignItems: 'center',
   }));
 
@@ -50,9 +50,9 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
                 paper: { sx: { mt: 1, minWidth: 180 } },
               }}
             >
-              <MenuItem onClick={handleMenuOpen}>About</MenuItem>
-              <MenuItem onClick={handleMenuOpen}>Skills</MenuItem>
-              <MenuItem onClick={handleMenuOpen}>Projects</MenuItem>
+              <MenuItem onClick={() => { handleClose(); onNavigate('about'); }}>About</MenuItem>
+              <MenuItem onClick={() => { handleClose(); onNavigate('skills'); }}>Skills</MenuItem>
+              <MenuItem onClick={() => { handleClose(); onNavigate('projects'); }}>Projects</MenuItem>
             </Menu>
           </>
         ) : (
