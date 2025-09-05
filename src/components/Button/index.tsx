@@ -21,7 +21,7 @@ const AnimatedButton = styled(Button)`
   span::after {
     content: "";
     position: absolute;
-    background-color: #9f9fac;
+    background-color: #8484eb;
     transition: all 0.3s ease;
   }
 
