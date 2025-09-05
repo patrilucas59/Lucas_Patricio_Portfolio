@@ -16,7 +16,7 @@ const Footer = () => {
     >
       <Container maxWidth='lg' sx={{ textAlign: 'center' }}>
         <Typography variant="body1" sx={{ mb: 1 }}>
-          @ {new Date().getFullYear()} Lucas Patrício | Front-end Developer
+          @ {new Date().getFullYear()} All Rights Reserved | Lucas Patrício | Front-end Developer
         </Typography>
 
         <Box>
