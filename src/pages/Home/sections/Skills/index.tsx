@@ -1,6 +1,18 @@
 import { Box, Container, Grid, Typography } from "@mui/material"
 
-const skills = ['Luffy', 'Zoro', 'Nami', 'Usopp', 'Sanji', 'Chopper', 'Robin', 'Franky', 'Brook', 'Jinbe']
+const skills = [
+  'HTML',
+  'CSS',
+  'JavaScript',
+  'TypeScript',
+  'React.js',
+  'Material UI',
+  'Tailwind.CSS',
+  'Styled-components',
+  'SEO',
+  'Zod',
+]
+
 
 const Skills = () => {
   return (
@@ -28,7 +40,7 @@ const Skills = () => {
                   backgroundColor: '#f9f9f9',
                   transition: 'all 0.3s ease',
                   '&:hover': {
-                    backgroundColor: '#4f8e3e',
+                    backgroundColor: '#474d46',
                     color: '#fff',
                     transform: 'scale(1.05)',
                   },

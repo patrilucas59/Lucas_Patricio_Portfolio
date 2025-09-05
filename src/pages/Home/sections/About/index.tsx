@@ -9,20 +9,16 @@ const About = () => {
         py: 8,
       }}
     >
-      <Container>
-        <Typography>
+      <Container maxWidth='lg'>
+        <Typography variant="h3" fontWeight={700} textAlign='center' mb={4}>
           About Me
         </Typography>
-        <Typography>
-          Lorem Ipsum is simply dummy text of the printing and
-          typesetting industry. Lorem Ipsum has been the industry's
-          standard dummy text ever since the 1500s, when an unknown printer
-          took a galley of type and scrambled it to make a type specimen book.
-          It has survived not only five centuries, but also the leap into electronic
-          typesetting, remaining essentially unchanged. It was popularised in the 1960s
-          with the release of Letraset sheets containing Lorem Ipsum passages, and more
-          recently with desktop publishing software like Aldus PageMaker including versions
-          of Lorem Ipsum.
+        <Typography variant="h6">
+          My full name is Lucas Patrício da Silva, i'm 23 years old,
+          born on São Paulo and I live in São Bernardo do Campo. I started
+          my career studying System Analysis and Development. I'm currently
+          working as a front-end developer, improving myself and always studying
+          something new!
         </Typography>
       </Container>
     </Box>

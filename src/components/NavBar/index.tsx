@@ -1,4 +1,4 @@
-import { AppBar, Box, IconButton, Menu, MenuItem, styled, Toolbar, useMediaQuery, useTheme } from '@mui/material'
+import { AppBar, Menu, MenuItem, styled, Toolbar, useMediaQuery, useTheme } from '@mui/material'
 import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import { StyledButton } from '../Button';
@@ -62,8 +62,15 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
               onNavigate('about');
             }}
               sx={{
-                '&:hover': { backgroundColor: 'black', color: '#fff' }
-              }}>
+                transition: 'all 0.1s ease',
+                '&:hover': {
+                  transform: 'scale(1.05)',
+                  backgroundColor: 'black',
+                  color: '#fff',
+                  borderRadius: '19px',
+                }
+              }}
+            >
               About
             </MenuItem>
             <MenuItem onClick={() => {
@@ -71,8 +78,15 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
               onNavigate('skills')
             }}
               sx={{
-                '&:hover': { backgroundColor: 'black', color: '#fff' }
-              }}>
+                transition: 'all 0.1s ease',
+                '&:hover': {
+                  transform: 'scale(1.05)',
+                  backgroundColor: 'black',
+                  color: '#fff',
+                  borderRadius: '19px',
+                }
+              }}
+            >
               Skills
             </MenuItem>
             <MenuItem onClick={() => {
@@ -80,8 +94,15 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
               onNavigate('projects')
             }}
               sx={{
-                '&:hover': { backgroundColor: 'black', color: '#fff' }
-              }}>
+                transition: 'all 0.1s ease',
+                '&:hover': {
+                  transform: 'scale(1.05)',
+                  backgroundColor: 'black',
+                  color: '#fff',
+                  borderRadius: '19px',
+                }
+              }}
+            >
               Projects
             </MenuItem>
           </>
