@@ -22,7 +22,7 @@ const AnimatedButton = styled(Button)`
     content: "";
     position: absolute;
     background-color: #8484eb;
-    transition: all 0.3s ease;
+    transition: all 0.1s ease;
   }
 
   &::before {

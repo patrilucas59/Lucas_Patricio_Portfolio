@@ -15,8 +15,8 @@ const About = () => {
         </Typography>
         <Typography variant="h6">
           My full name is Lucas Patrício da Silva, i'm 23 years old,
-          born on São Paulo and I live in São Bernardo do Campo. I started
-          my career studying System Analysis and Development. I'm currently
+          born on São Paulo and I'm living in São Bernardo do Campo. I started
+          my career studying System Analysis and Development, started in 2022. I'm currently
           working as a front-end developer, improving myself and always studying
           something new!
         </Typography>

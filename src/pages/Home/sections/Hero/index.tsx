@@ -37,9 +37,9 @@ const Hero = () => {
     <>
       <StyledHero>
         <Container maxWidth='lg'>
-          <Grid container spacing={2}>
-            <Grid item xs={12} md={4} display='flex' justifyContent='center'>
-              <Box position='relative' textAlign='center'>
+          <Grid container spacing={2} justifyContent='center' alignContent='center'>
+            <Grid item xs={12} sm={6} md={4} display='flex' justifyContent='center' alignItems='center'>
+              <Box position='relative' textAlign='center' sx={{ margin: '0 auto' }}>
                 <StyledImg src={Avatar} alt="Foto-de-Perfil" />
               </Box>
             </Grid>

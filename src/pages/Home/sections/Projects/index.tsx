@@ -27,7 +27,7 @@ const Projects = () => {
         </Typography>
         <Grid container spacing={3} sx={{ display: 'flex', justifyContent: 'center' }}>
           {projects.map((project) => (
-            <Grid item xs={12} md={4} key={project.title}>
+            <Grid item xs={12} sm={6} md={4} key={project.title}>
               <Card sx={{ borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
                 <CardMedia
                   component='img'
