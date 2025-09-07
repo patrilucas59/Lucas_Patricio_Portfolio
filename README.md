@@ -1,3 +1,3 @@
-# Porfolio
+# Lucas Patrício da Silva
 
-Desenvolvimento de um novo portfolio
+Welcome to my portfolio! Here, you can find my own projects, skills and more about me!
