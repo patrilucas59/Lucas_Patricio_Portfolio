@@ -1,7 +1,7 @@
-import { AppBar, Menu, MenuItem, styled, Toolbar, useMediaQuery, useTheme } from '@mui/material'
 import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import { StyledButton } from '../Button';
+import { AppBar, Menu, MenuItem, styled, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 
 interface NavBarProps {
   onNavigate: (section: string) => void

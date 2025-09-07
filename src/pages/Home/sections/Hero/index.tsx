@@ -1,9 +1,9 @@
-import { Box, Button, Container, Grid, styled, Typography, useTheme } from '@mui/material'
+
 import Avatar from '../../../../assets/images/Foto-de-Perfil.jpeg';
 import DownloadIcon from '@mui/icons-material/Download';
 import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { StyledButton } from '../../../../components/Button';
-
+import { Box, Container, Grid, styled, Typography } from '@mui/material';
 
 const Hero = () => {
   const handleDownloadCV = () => {
@@ -28,6 +28,8 @@ const Hero = () => {
 
   const StyledImg = styled('img')(({ theme }) => ({
     width: '100%',
+    maxWidth: '60%',
+    marginTop: '5%',
     borderRadius: '50%',
     border: `1px solid ${theme.palette.primary.contrastText}`
   }))
@@ -37,17 +39,17 @@ const Hero = () => {
     <>
       <StyledHero>
         <Container maxWidth='lg'>
-          <Grid container spacing={2} justifyContent='center' alignContent='center'>
-            <Grid item xs={12} sm={6} md={4} display='flex' justifyContent='center' alignItems='center'>
+          <Grid container spacing={2} justifyContent="center" alignItems="center">
+            <Grid>
               <Box position='relative' textAlign='center' sx={{ margin: '0 auto' }}>
                 <StyledImg src={Avatar} alt="Foto-de-Perfil" />
               </Box>
             </Grid>
-            <Grid item xs={12} md={8}>
+            <Grid>
               <Typography color='primary.contrastText' variant='h1' textAlign='center'>Lucas Patrício</Typography>
               <Typography color='primary.contrastText' variant='h2' textAlign='center'>Front-end Developer</Typography>
               <Grid container display='flex' justifyContent='center' spacing={3} mt={1}>
-                <Grid item xs={12} md={4} display='flex' justifyContent='center'>
+                <Grid sx={{ display: 'flex', justifyContent: 'center' }}>
                   <StyledButton
                     size='medium'
                     variant='outlined'
@@ -58,7 +60,7 @@ const Hero = () => {
                     Download CV
                   </StyledButton>
                 </Grid>
-                <Grid item xs={6} md={6} display='flex' justifyContent='center'>
+                <Grid sx={{ display: 'flex', justifyContent: 'center' }}>
                   <StyledButton
                     size="medium"
                     variant="outlined"

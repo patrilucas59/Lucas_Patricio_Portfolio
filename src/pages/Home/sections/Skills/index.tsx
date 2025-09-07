@@ -1,4 +1,5 @@
-import { Box, Container, Grid, Typography } from "@mui/material"
+import { Box, Container, Grid, Typography } from "@mui/material";
+
 
 const skills = [
   'HTML',
@@ -29,7 +30,7 @@ const Skills = () => {
         </Typography>
         <Grid container spacing={3} justifyContent="center">
           {skills.map((skill) => (
-            <Grid item key={skill}>
+            <Grid key={skill}>
               <Box
                 sx={{
                   px: 3,

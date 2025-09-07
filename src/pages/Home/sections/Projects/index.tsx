@@ -27,23 +27,23 @@ const Projects = () => {
         </Typography>
         <Grid container spacing={3} sx={{ display: 'flex', justifyContent: 'center' }}>
           {projects.map((project) => (
-            <Grid item xs={12} sm={6} md={4} key={project.title}>
-              <Card sx={{ borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+            <Grid sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={project.title}>
+              <Card sx={{ width: '45%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
                 <CardMedia
                   component='img'
                   src={Avatar}
                   alt="Project Image"
                   sx={{
-                    height: 200,
+                    height: { xs: 100, sm: 200, md: 250 },
                     objectFit: 'cover',
                     borderRadius: '12px 12px 0 0'
                   }}
                 />
                 <CardContent>
-                  <Typography variant="h6" fontWeight={700} mb={1}>
+                  <Typography variant="h6" fontWeight={700} mb={1} sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
                     {project.title}
                   </Typography>
-                  <Typography variant="body2" mb={2}>
+                  <Typography variant="body2" mb={2} sx={{ textAlign: { xs: 'left' } }}>
                     {project.description}
                   </Typography>
                   <Typography>

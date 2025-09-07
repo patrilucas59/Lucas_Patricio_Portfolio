@@ -1,5 +1,5 @@
 import styled from "@emotion/styled"
-import { Button } from "@mui/material"
+import { Button } from "@mui/material";
 import React, { ReactNode } from 'react'
 
 export type ButtonType = {
