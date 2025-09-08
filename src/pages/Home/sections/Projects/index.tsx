@@ -28,13 +28,14 @@ const Projects = () => {
         <Grid container spacing={3} sx={{ display: 'flex', justifyContent: 'center' }}>
           {projects.map((project) => (
             <Grid sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={project.title}>
-              <Card sx={{ width: '45%', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0,0,0,0.1)' }}>
+              <Card sx={{ width: { sm: 400, md: 500 }, borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' }}>
                 <CardMedia
                   component='img'
                   src={Avatar}
                   alt="Project Image"
                   sx={{
-                    height: { xs: 100, sm: 200, md: 250 },
+                    width: { xs: 300 },
+                    height: { xs: 150, sm: 230, md: 300 },
                     objectFit: 'cover',
                     borderRadius: '12px 12px 0 0'
                   }}
@@ -76,7 +77,7 @@ const Projects = () => {
           ))}
         </Grid>
       </Container>
-    </Box>
+    </Box >
   )
 }
 
