@@ -1,13 +1,16 @@
 import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import { StyledButton } from '../Button';
-import { AppBar, Menu, MenuItem, styled, Toolbar, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Box, Menu, MenuItem, styled, Toolbar, useMediaQuery, useTheme } from '@mui/material';
+import LanguageSwitcher from "../LanguageSwitcher";
+import { useTranslation } from 'react-i18next';
 
 interface NavBarProps {
   onNavigate: (section: string) => void
 }
 
 const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
+  const { t } = useTranslation('home')
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('md'));
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
@@ -50,9 +53,18 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
                 paper: { sx: { mt: 1, minWidth: 180 } },
               }}
             >
-              <MenuItem onClick={() => { handleClose(); onNavigate('about'); }}>About</MenuItem>
-              <MenuItem onClick={() => { handleClose(); onNavigate('skills'); }}>Skills</MenuItem>
-              <MenuItem onClick={() => { handleClose(); onNavigate('projects'); }}>Projects</MenuItem>
+              <MenuItem onClick={() => { handleClose(); onNavigate('about'); }}>
+                {t('navBar.about')}
+              </MenuItem>
+              <MenuItem onClick={() => { handleClose(); onNavigate('skills'); }}>
+                {t('navBar.skills')}
+              </MenuItem>
+              <MenuItem onClick={() => { handleClose(); onNavigate('projects'); }}>
+                {t('navBar.projects')}
+              </MenuItem>
+              <MenuItem>
+                <LanguageSwitcher />
+              </MenuItem>
             </Menu>
           </>
         ) : (
@@ -71,7 +83,7 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
                 }
               }}
             >
-              About
+              {t('navBar.about')}
             </MenuItem>
             <MenuItem onClick={() => {
               handleClose();
@@ -87,7 +99,7 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
                 }
               }}
             >
-              Skills
+              {t('navBar.skills')}
             </MenuItem>
             <MenuItem onClick={() => {
               handleClose();
@@ -103,10 +115,13 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
                 }
               }}
             >
-              Projects
+              {t('navBar.projects')}
             </MenuItem>
           </>
         )}
+        <Box sx={{ backgroundColor: '#d6dee2', border: " 2px solid #0288d1", borderRadius: '45%' }}>
+          <LanguageSwitcher />
+        </Box>
       </StyledToolbar>
     </AppBar>
   )

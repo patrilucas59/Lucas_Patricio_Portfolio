@@ -1,4 +1,5 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 
 const skills = [
@@ -8,7 +9,7 @@ const skills = [
   'TypeScript',
   'React.js',
   'Material UI',
-  'Tailwind.CSS',
+  'Tailwind CSS',
   'Styled-components',
   'SEO',
   'Zod',
@@ -16,6 +17,7 @@ const skills = [
 
 
 const Skills = () => {
+  const { t } = useTranslation('home')
   return (
     <Box
       id='skills'
@@ -26,7 +28,7 @@ const Skills = () => {
     >
       <Container maxWidth='lg'>
         <Typography variant="h3" fontWeight={700} textAlign="center" mb={4}>
-          Skills
+          {t('skills.title')}
         </Typography>
         <Grid container spacing={3} justifyContent="center">
           {skills.map((skill) => (

@@ -2,17 +2,18 @@ import { Box, Button, Card, CardContent, CardMedia, Container, Grid, Typography 
 import GitHubIcon from '@mui/icons-material/GitHub';
 import HomeIcon from '@mui/icons-material/Home';
 import Avatar from '../../../../assets/images/NoteMe-ToDo-List.jpg'
-
-const projects = [
-  {
-    title: 'Note Me - To Do List',
-    description: 'A simple and functional project of to-do list, build with React, JavaScript and styled with TailwindCSS. Ideal for practicing React hooks, local storage and URL manipulation with react-router-dom.',
-    github: 'https://github.com/patrilucas59/gerenciador-de-tarefas',
-    project: 'https://note-me-to-do-list-six-liard.vercel.app/',
-  },
-]
+import { useTranslation } from "react-i18next";
 
 const Projects = () => {
+  const { t } = useTranslation('home')
+
+  const projects = t('projects.projectsList', { returnObjects: true }) as Array<{
+    title: string;
+    description: string;
+    github: string;
+    project: string;
+  }>
+
   return (
     <Box
       id='projects'
@@ -23,10 +24,10 @@ const Projects = () => {
     >
       <Container maxWidth='lg'>
         <Typography variant="h3" fontWeight={700} textAlign='center' mb={4}>
-          Projects
+          {t('projects.title')}
         </Typography>
         <Grid container spacing={3} sx={{ display: 'flex', justifyContent: 'center' }}>
-          {projects.map((project) => (
+          {projects.map((project: any) => (
             <Grid sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={project.title}>
               <Card sx={{ width: { sm: 400, md: 500 }, borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' }}>
                 <CardMedia
@@ -34,8 +35,6 @@ const Projects = () => {
                   src={Avatar}
                   alt="Project Image"
                   sx={{
-                    width: { xs: 300 },
-                    height: { xs: 150, sm: 230, md: 300 },
                     objectFit: 'cover',
                     borderRadius: '12px 12px 0 0'
                   }}
@@ -53,9 +52,9 @@ const Projects = () => {
                       color="primary"
                       href={project.github}
                       target="_blank"
-                      sx={{ display: 'flex', alignItems: 'center' }}
+                      sx={{ display: 'flex', alignItems: 'center', width: '100%' }}
                     >
-                      View on GitHub
+                      {t('projects.viewGithub')}
                       <GitHubIcon sx={{ ml: 1 }} />
                     </Button>
                   </Typography>
@@ -65,9 +64,9 @@ const Projects = () => {
                       color="primary"
                       href={project.project}
                       target="_blank"
-                      sx={{ display: 'flex', alignItems: 'center', mt: 2 }}
+                      sx={{ display: 'flex', alignItems: 'center', mt: 2, width: '100%' }}
                     >
-                      Access Project
+                      {t('projects.accessProject')}
                       <HomeIcon sx={{ ml: 1 }} />
                     </Button>
                   </Typography>

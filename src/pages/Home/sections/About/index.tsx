@@ -1,7 +1,10 @@
 import { Box, Container, Typography } from "@mui/material"
+import { useTranslation } from "react-i18next";
 
 
 const About = () => {
+  const { t } = useTranslation('home');
+
   return (
     <Box
       id='about'
@@ -12,14 +15,10 @@ const About = () => {
     >
       <Container maxWidth='lg'>
         <Typography variant="h3" fontWeight={700} textAlign='center' mb={4}>
-          About Me
+          {t('about.title')}
         </Typography>
         <Typography variant="h6">
-          My full name is Lucas Patrício da Silva, i'm 23 years old,
-          born on São Paulo and I'm living in São Bernardo do Campo. I started
-          my career studying System Analysis and Development, started in 2022. I'm currently
-          working as a front-end developer, improving myself and always studying
-          something new!
+          {t('about.description')}
         </Typography>
       </Container>
     </Box>

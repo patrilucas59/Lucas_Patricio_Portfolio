@@ -2,8 +2,11 @@ import { Box, Container, IconButton, Typography } from "@mui/material";
 import GitHubIcon from '@mui/icons-material/GitHub';
 import LinkedInIcon from '@mui/icons-material/LinkedIn';
 import WhatsAppIcon from '@mui/icons-material/WhatsApp';
+import { useTranslation } from "react-i18next";
 
 const Footer = () => {
+  const { t } = useTranslation('home');
+
   return (
     <Box
       component='footer'
@@ -16,7 +19,7 @@ const Footer = () => {
     >
       <Container maxWidth='lg' sx={{ textAlign: 'center' }}>
         <Typography variant="body1" sx={{ mb: 1 }}>
-          @ {new Date().getFullYear()} All Rights Reserved | Lucas Patrício | Front-end Developer
+          {t('footer.text', { year: new Date().getFullYear() })}
         </Typography>
 
         <Box>
