@@ -70,6 +70,8 @@ i18next
               {
                 title: "Note Me - To Do List",
                 description: "Um projeto simples e funcional de uma lista de tarefas, feito em React, JavaScript e estilizado com TailwindCSS. Ideal para praticar hooks do React, local storage e manipulação de URLs com react-router-dom.",
+                github: "https://github.com/patrilucas59/gerenciador-de-tarefas",
+                project: "https://note-me-to-do-list-six-liard.vercel.app/",
               }
             ]
           },
