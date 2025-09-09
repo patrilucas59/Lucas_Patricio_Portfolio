@@ -24,7 +24,7 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
 
   const StyledToolbar = styled(Toolbar)(() => ({
     display: 'flex',
-    justifyContent: isMobile ? 'left' : 'space-evenly',
+    justifyContent: isMobile ? 'space-between' : 'space-around',
     alignItems: 'center',
   }));
 
@@ -116,7 +116,7 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
             </MenuItem>
           </>
         )}
-        <Box sx={{ backgroundColor: '#d6dee2', border: " 3px solid #0288d1", borderRadius: '5%', transition: 'all 0.5s ease' }}>
+        <Box sx={{ display: 'flex', alignItems: 'end', backgroundColor: '#d6dee2', border: " 3px solid #0288d1", borderRadius: '5%', transition: 'all 0.5s ease' }}>
           <LanguageSwitcher />
         </Box>
       </StyledToolbar>
