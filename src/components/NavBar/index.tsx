@@ -116,7 +116,7 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
             </MenuItem>
           </>
         )}
-        <Box sx={{ backgroundColor: '#d6dee2', border: " 2px solid #0288d1", borderRadius: '45%' }}>
+        <Box sx={{ backgroundColor: '#d6dee2', border: " 3px solid #0288d1", borderRadius: '5%', transition: 'all 0.5s ease' }}>
           <LanguageSwitcher />
         </Box>
       </StyledToolbar>
