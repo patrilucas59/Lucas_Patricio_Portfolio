@@ -48,10 +48,10 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
             />
           </Grid>
           <Grid>
-            <Typography color="primary.contrastText" variant="h1" textAlign="center">
+            <Typography color="primary.contrastText" variant="h1" fontSize={14} textAlign="center">
               {title || t('hero.title')}
             </Typography>
-            <Typography color="primary.contrastText" variant="h2" textAlign="center">
+            <Typography color="primary.contrastText" variant="h2" fontSize={10} textAlign="center">
               {t('hero.subtitle')}
             </Typography>
           </Grid>
