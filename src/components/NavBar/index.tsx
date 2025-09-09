@@ -12,7 +12,7 @@ interface NavBarProps {
 const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
   const { t } = useTranslation('home')
   const theme = useTheme();
-  const isMobile = useMediaQuery(theme.breakpoints.down('md'));
+  const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
   const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
   const open = Boolean(anchorEl);
 
@@ -61,9 +61,6 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
               </MenuItem>
               <MenuItem onClick={() => { handleClose(); onNavigate('projects'); }}>
                 {t('navBar.projects')}
-              </MenuItem>
-              <MenuItem>
-                <LanguageSwitcher />
               </MenuItem>
             </Menu>
           </>

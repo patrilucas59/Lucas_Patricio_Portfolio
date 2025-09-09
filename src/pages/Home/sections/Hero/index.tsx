@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
             </Typography>
           </Grid>
 
-          <Grid container display='flex' flexDirection='row' justifyContent='end'>
+          <Grid container display='flex' justifyContent='center'>
             <Grid>
               <StyledButton
                 size="medium"
