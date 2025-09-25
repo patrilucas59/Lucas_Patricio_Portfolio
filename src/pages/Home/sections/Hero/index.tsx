@@ -41,8 +41,8 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
               alt="Lucas Patrício"
               src={ProfilePic}
               sx={{
-                width: 300,
-                height: 300,
+                width: 280,
+                height: 280,
                 border: '3px solid white',
               }}
             />
