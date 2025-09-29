@@ -7,6 +7,7 @@ const skills = [
   'CSS',
   'JavaScript',
   'TypeScript',
+  'Git',
   'React.js',
   'Material UI',
   'Tailwind CSS',
