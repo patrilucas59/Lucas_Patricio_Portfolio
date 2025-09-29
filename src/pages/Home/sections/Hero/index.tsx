@@ -14,7 +14,7 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
 
   const handleDownloadCV = () => {
     const link = document.createElement('a');
-    link.href = '/Dev Front End - Lucas Patrício da Silva.pdf';
+    link.href = '/Lucas Patrício - Dev Front End Currículo 2025.pdf';
     link.download = 'Lucas-Patrício_Currículo.pdf';
     document.body.appendChild(link);
     link.click();
