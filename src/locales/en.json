@@ -1,0 +1,36 @@
+{
+  "navBar": {
+    "about": "About Me",
+    "skills": "Skills",
+    "projects": "Projects"
+  },
+  "hero": {
+    "title": "Lucas Patrício",
+    "subtitle": "Front-end Developer",
+    "downloadCV": "Download CV",
+    "contactMe": "Contact Me"
+  },
+  "about": {
+    "title": "About Me",
+    "description": "My name is Lucas Patrício da Silva, I'm 23 years old, born in São Paulo and currently living in São Bernardo do Campo. I began my journey in technology in 2022, studying Systems Analysis and Development. Since then, I’ve been working as a front-end developer, passionate about building user-friendly experiences and always eager to learn something new!"
+  },
+  "skills": {
+    "title": "Skills"
+  },
+  "projects": {
+    "title": "Projects",
+    "viewGithub": "View on GitHub",
+    "accessProject": "Access Project",
+    "projectsList": [
+      {
+        "title": "Note Me - To Do List",
+        "description": "A simple and functional to-do list project, built with React, JavaScript and styled with TailwindCSS. Ideal for practicing React hooks, local storage and URL manipulation with react-router-dom.",
+        "github": "https://github.com/patrilucas59/gerenciador-de-tarefas",
+        "project": "https://note-me-to-do-list-six-liard.vercel.app/"
+      }
+    ]
+  },
+  "footer": {
+    "text": "@ {{year}} All Rights Reserved | Lucas Patrício | Front-end Developer"
+  }
+}

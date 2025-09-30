@@ -1,0 +1,36 @@
+{
+  "navBar": {
+    "about": "Sobre Mim",
+    "skills": "Habilidades",
+    "projects": "Projetos"
+  },
+  "hero": {
+    "title": "Lucas Patrício",
+    "subtitle": "Desenvolvedor Front-end",
+    "downloadCV": "Baixar Currículo",
+    "contactMe": "Contato"
+  },
+  "about": {
+    "title": "Sobre Mim",
+    "description": "Meu nome é Lucas Patrício da Silva, tenho 23 anos, nasci em São Paulo e atualmente moro em São Bernardo do Campo. Iniciei minha jornada na tecnologia em 2022, estudando Análise e Desenvolvimento de Sistemas. Desde então, atuo como desenvolvedor front-end, apaixonado por criar experiências intuitivas e sempre em busca de aprender algo novo!"
+  },
+  "skills": {
+    "title": "Habilidades"
+  },
+  "projects": {
+    "title": "Projetos",
+    "viewGithub": "Veja no GitHub",
+    "accessProject": "Acessar Projeto",
+    "projectsList": [
+      {
+        "title": "Note Me - To Do List",
+        "description": "Um projeto simples e funcional de lista de tarefas, feito em React, JavaScript e estilizado com TailwindCSS. Ideal para praticar hooks do React, local storage e manipulação de URLs com react-router-dom.",
+        "github": "https://github.com/patrilucas59/gerenciador-de-tarefas",
+        "project": "https://note-me-to-do-list-six-liard.vercel.app/"
+      }
+    ]
+  },
+  "footer": {
+    "text": "@ {{year}} Todos os direitos reservados | Lucas Patrício | Desenvolvedor Front-end"
+  }
+}
