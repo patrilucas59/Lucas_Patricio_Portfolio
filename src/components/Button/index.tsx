@@ -13,64 +13,6 @@ export type ButtonType = {
 const AnimatedButton = styled(Button)`
   position: relative;
   overflow: hidden;
-  transition: color 2.4s ease;
-
-  &::before,
-  &::after,
-  span::before,
-  span::after {
-    content: "";
-    position: absolute;
-    background-color: #8484eb;
-    transition: all 0.1s ease;
-  }
-
-  &::before {
-    top: 0;
-    left: 0;
-    height: 2px;
-    width: 0;
-  }
-
-  &::after {
-    top: 0;
-    right: 0;
-    width: 2px;
-    height: 0;
-    transition-delay: 0.1s;
-  }
-
-  span::before {
-    bottom: 0;
-    right: 0;
-    height: 2px;
-    width: 0;
-    transition-delay: 0.2s;
-  }
-
-  span::after {
-    bottom: 0;
-    left: 0;
-    width: 2px;
-    height: 0;
-    transition-delay: 0.3s;
-  }
-
-  &:hover::before {
-    width: 100%;
-  }
-
-  &:hover::after {
-    height: 100%;
-  }
-
-  &:hover span::before {
-    width: 100%;
-  }
-
-  &:hover span::after {
-    height: 100%;
-  }
 `
 
 export function StyledButton(props: ButtonType) {

@@ -41,8 +41,9 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
               alt="Lucas Patrício"
               src={ProfilePic}
               sx={{
-                width: 280,
-                height: 280,
+                mt: 9,
+                width: 240,
+                height: 240,
                 border: '3px solid white',
               }}
             />
@@ -72,7 +73,7 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
               <StyledButton
                 size="medium"
                 variant="outlined"
-                color='info'
+                color='secondary'
                 onClick={handleContactMe}
               >
                 <MailOutlineIcon style={{ marginRight: '8px' }} />
