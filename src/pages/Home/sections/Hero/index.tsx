@@ -10,12 +10,22 @@ interface HeroProps {
 }
 
 const Hero: React.FC<HeroProps> = ({ title }) => {
-  const { t } = useTranslation('home');
+  const { t, i18n } = useTranslation('home');
 
   const handleDownloadCV = () => {
+    const currentLanguage = i18n.language;
+
+    const cvFile = currentLanguage === 'en' 
+      ? '/LUCAS PATRÍCIO DA SILVA - CV english .pdf'
+      : '/Desenvolvedor Front End - Lucas Patrício da Silva.pdf';
+
+    const downloadName = currentLanguage === 'en'
+      ? 'Lucas-Patrício_Resume.pdf'
+      : 'Lucas-Patrício_Currículo.pdf';
+
     const link = document.createElement('a');
-    link.href = '/Desenvolvedor Front End - Lucas Patrício da Silva.pdf';
-    link.download = 'Lucas-Patrício_Currículo.pdf';
+    link.href = cvFile;
+    link.download = downloadName;
     document.body.appendChild(link);
     link.click();
     document.body.removeChild(link);
