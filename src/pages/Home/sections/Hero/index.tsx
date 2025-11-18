@@ -16,7 +16,7 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
     const currentLanguage = i18n.language;
 
     const cvFile = currentLanguage === 'en' 
-      ? '/LUCAS PATRÍCIO DA SILVA - CV english .pdf'
+      ? '/Lucas Patrício - CV English.pdf'
       : '/Desenvolvedor Front End - Lucas Patrício da Silva.pdf';
 
     const downloadName = currentLanguage === 'en'
