@@ -27,7 +27,15 @@
         "title": "Note Me - To Do List",
         "description": "Um projeto simples e funcional de lista de tarefas, feito em React, JavaScript e estilizado com TailwindCSS. Ideal para praticar hooks do React, local storage e manipulação de URLs com react-router-dom.",
         "github": "https://github.com/patrilucas59/gerenciador-de-tarefas",
-        "project": "https://note-me-to-do-list-six-liard.vercel.app/"
+        "project": "https://note-me-to-do-list-six-liard.vercel.app/",
+        "image": "Note Me ToDo List"
+      },
+      {
+        "title": "Foco +",
+        "description": "Um dashboard de estudos desenvolvido em Angular, estilizado com TailwindCSS. O intuito do projeto é auxiliar na organização dos estudos, além de proporcionar desafios diários para manter o foco e a produtividade.",
+        "github": "https://github.com/patrilucas59/dashboard-estudos",
+        "project": "https://foco-plus.vercel.app/",
+        "image": "Foco +"
       }
     ]
   },
