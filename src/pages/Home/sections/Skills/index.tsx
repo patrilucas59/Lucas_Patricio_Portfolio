@@ -14,6 +14,7 @@ const skills = [
   'Styled-components',
   'SEO',
   'Zod',
+  'Angular',
 ]
 
 
