@@ -17,7 +17,7 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
 
     const cvFile = currentLanguage === 'en' 
       ? '/Lucas Patrício da Silva - Resume.pdf'
-      : '/Desenvolvedor Front End - Lucas Patrício da Silva.pdf';
+      : '/Front-End - Currículo Lucas Patrício da Silva.pdf';
 
     const downloadName = currentLanguage === 'en'
       ? 'Lucas-Patrício_Resume.pdf'
