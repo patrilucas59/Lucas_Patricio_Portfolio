@@ -1,13 +1,14 @@
 import { Box, Container, Grid, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
-
 const skills = [
   'HTML',
   'CSS',
   'JavaScript',
   'TypeScript',
+  'Figma',
   'Git',
+  'Azure DevOps',
   'React.js',
   'Material UI',
   'Tailwind CSS',
