@@ -37,15 +37,18 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
 
   const StyledHero = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
-    height: '100vh',
+    minHeight: '100vh',
     display: 'flex',
     alignItems: 'center',
+    justifyContent: 'center',
+    textAlign: 'center',
+    padding: theme.spacing(2),
   }));
 
   return (
     <StyledHero>
       <Container maxWidth='lg'>
-        <Grid container spacing={2} display='flex' justifyContent="center" alignItems="center">
+        <Grid container spacing={4} display='flex' justifyContent="center" alignItems="center">
           <Grid>
             <Avatar
               alt="Lucas Patrício"
