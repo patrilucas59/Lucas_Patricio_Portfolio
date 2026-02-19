@@ -10,12 +10,12 @@ const skills = [
   'Git',
   'Azure DevOps',
   'React.js',
+  'Angular',
   'Material UI',
   'Tailwind CSS',
   'Styled-components',
   'SEO',
   'Zod',
-  'Angular',
 ]
 
 
