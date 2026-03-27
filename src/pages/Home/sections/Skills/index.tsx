@@ -6,6 +6,7 @@ const skills = [
   'CSS',
   'JavaScript',
   'TypeScript',
+  'PHP',
   'Figma',
   'Git',
   'Azure DevOps',
