@@ -76,7 +76,7 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
                 size="medium"
                 variant="outlined"
                 backgroundColor="hsl(240, 5%, 14%)"
-                textColor="#22C35D"
+                textColor="#C9A227"
                 borderRadius={'10px'}
                 onClick={handleDownloadCV}
               >
@@ -88,7 +88,7 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
               <StyledButton
                 size="medium"
                 variant="outlined"
-                backgroundColor="#22C35D"
+                backgroundColor="#C9A227"
                 textColor="hsl(240, 5%, 14%)"
                 borderRadius={'10px'}
                 onClick={handleContactMe}

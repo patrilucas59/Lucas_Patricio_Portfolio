@@ -31,7 +31,7 @@ export function StyledButton(props: ButtonType) {
         "&:hover": {
           transform: 'scale(1.05)',
           filter: 'brightness(1.1)',
-          boxShadow: '0 6px 18px rgba(34, 195, 93, 0.4)',
+          boxShadow: '0 6px 18px #D4AF37',
         }
       }}
     >
