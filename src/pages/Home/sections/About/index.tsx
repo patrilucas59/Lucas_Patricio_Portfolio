@@ -1,27 +1,26 @@
-import { Box, Container, Typography } from "@mui/material"
+import { Box, Container, Typography, styled } from "@mui/material"
 import { useTranslation } from "react-i18next";
 
 
 const About = () => {
   const { t } = useTranslation('home');
 
+  const StyledBox = styled('div')(({ theme }) => ({
+    backgroundColor: theme.palette.primary.main,
+    py: 8,
+  }))
+
   return (
-    <Box
-      id='about'
-      sx={{
-        backgroundColor: 'f5f5f5',
-        py: 8,
-      }}
-    >
+    <StyledBox id='about'>
       <Container maxWidth='lg'>
-        <Typography variant="h3" fontWeight={700} textAlign='center' mb={4}>
+        <Typography variant="h3" fontWeight={600} textAlign='center' mb={6} color="#fff">
           {t('about.title')}
         </Typography>
-        <Typography variant="h6">
+        <Typography variant="h6" color="#fff" fontWeight={400} textAlign='center'>
           {t('about.description')}
         </Typography>
       </Container>
-    </Box>
+    </StyledBox>
   )
 }
 

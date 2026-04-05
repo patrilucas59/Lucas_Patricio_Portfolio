@@ -11,10 +11,9 @@ const Footer = () => {
     <Box
       component='footer'
       sx={{
-        backgroundColor: '#232323',
+        backgroundColor: 'hsl(240, 6%, 10%)',
         color: '#fff',
         py: 3,
-        mt: 5,
       }}
     >
       <Container maxWidth='lg' sx={{ textAlign: 'center' }}>

@@ -1,4 +1,4 @@
-import { Box, Container, Grid, Typography } from "@mui/material";
+import { Box, Container, Grid, styled, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 const skills = [
@@ -19,19 +19,19 @@ const skills = [
   'Zod',
 ]
 
+const StyledBox = styled('div')(({ theme }) => ({
+  backgroundColor: theme.palette.primary.main,
+  paddingTop: '64px',
+}))
 
 const Skills = () => {
   const { t } = useTranslation('home')
+
+
   return (
-    <Box
-      id='skills'
-      sx={{
-        background: 'grey',
-        py: 8,
-      }}
-    >
+    <StyledBox id='skills'>
       <Container maxWidth='lg'>
-        <Typography variant="h3" fontWeight={700} textAlign="center" mb={4}>
+        <Typography variant="h3" fontWeight={600} textAlign="center" mb={6} color="#fff">
           {t('skills.title')}
         </Typography>
         <Grid container spacing={3} justifyContent="center">
@@ -43,12 +43,12 @@ const Skills = () => {
                   py: 1.5,
                   border: '1px solid #ccc',
                   borderRadius: '8px',
-                  fontWeight: 600,
-                  backgroundColor: '#f9f9f9',
+                  fontWeight: 400,
+                  color: '#fff',
+                  backgroundColor: '#232323',
                   transition: 'all 0.3s ease',
                   '&:hover': {
                     backgroundColor: '#474d46',
-                    color: '#fff',
                     transform: 'scale(1.05)',
                   },
                 }}
@@ -59,7 +59,7 @@ const Skills = () => {
           ))}
         </Grid>
       </Container>
-    </Box>
+    </StyledBox>
   )
 }
 

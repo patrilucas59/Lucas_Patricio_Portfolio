@@ -37,7 +37,9 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate }) => {
             <StyledButton
               size='small'
               variant='contained'
-              color='primary'
+              backgroundColor='black'
+              textColor='white'
+              borderRadius={'20px'}
               onClick={handleMenuOpen}
             >
               <MenuIcon />

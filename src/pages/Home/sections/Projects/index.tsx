@@ -1,8 +1,8 @@
-import { Box, Button, Card, CardContent, CardMedia, Container, Grid, Typography, } from '@mui/material'
+import { Box, Button, Card, CardContent, CardMedia, Container, Grid, styled, Typography, } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import HomeIcon from '@mui/icons-material/Home'
-import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
-import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
+// import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
+// import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
@@ -33,16 +33,16 @@ const Projects = () => {
     'Foco +': FocoPlusImg,
   }
 
+  const StyledBox = styled('div')(({ theme }) => ({
+    backgroundColor: theme.palette.primary.main,
+    paddingTop: '64px',
+    paddingBottom: '64px',
+  }))
+
   return (
-    <Box
-      id='projects'
-      sx={{
-        backgroundColor: '#5f5f5',
-        py: 8,
-      }}
-    >
+    <StyledBox id='projects'>
       <Container maxWidth='lg'>
-        <Typography variant="h3" fontWeight={700} textAlign='center' mb={4}>
+        <Typography variant="h3" color='#fff' fontWeight={600} textAlign='center' mb={6}>
           {t('projects.title')}
         </Typography>
         <Grid container spacing={3} sx={{ display: 'flex', justifyContent: 'center' }}>
@@ -57,7 +57,16 @@ const Projects = () => {
               {projects.map((project) => (
                 <SwiperSlide key={project.title}>
                 <Grid sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center' }} key={project.title}>
-                  <Card sx={{ width: { sm: 400, md: 500 }, height: 500, display: 'flex', flexDirection: 'column', borderRadius: '12px', boxShadow: '0 4px 12px rgba(0, 0, 0, 0.1)' }}>
+                    <Card
+                      sx={{
+                        width: { sm: 400, md: 500 },
+                        maxWidth: 500,
+                        height: 500,
+                        display: 'flex',
+                        flexDirection: 'column',
+                        borderRadius: '12px',
+                      }}
+                    >
                       <CardMedia
                         component="img"
                         src={projectsImages[project.title]}
@@ -65,14 +74,14 @@ const Projects = () => {
                         sx={{
                           height: 200,
                           objectFit: 'cover',
-                      borderRadius: '12px 12px 0 0',
+                          borderRadius: '12px 12px 0 0',
                         }}
                       />
-                    <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', }}>
-                      <Typography variant="h6" fontWeight={700} mb={1} sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
+                    <CardContent sx={{ flexGrow: 1, display: 'flex', flexDirection: 'column', backgroundColor: '#1f1f1f' }}>
+                      <Typography variant="h6" color='#fff' fontWeight={400} mb={1} sx={{ textAlign: { xs: 'center', sm: 'left' } }}>
                           {project.title}
                         </Typography>
-                      <Typography variant="body2" mb={2} sx={{ textAlign: { xs: 'left' } }}>
+                      <Typography variant="body2" color='#fff' fontWeight={200} mb={2} sx={{ textAlign: { xs: 'left' } }}>
                           {project.description}
                         </Typography>
                         <Box mt="auto">
@@ -129,7 +138,7 @@ const Projects = () => {
           </Box>
         </Grid>
       </Container>
-    </Box>
+    </StyledBox>
   )
 }
 

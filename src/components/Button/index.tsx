@@ -7,7 +7,9 @@ export type ButtonType = {
   variant?: 'contained' | 'outlined' | 'text';
   onClick?: React.MouseEventHandler<HTMLButtonElement>;
   children: ReactNode;
-  color?: 'primary' | 'secondary' | 'inherit' | 'success' | 'error' | 'info' | 'warning';
+  backgroundColor?: string;
+  textColor?: string;
+  borderRadius: string;
 }
 
 const AnimatedButton = styled(Button)`
@@ -20,8 +22,12 @@ export function StyledButton(props: ButtonType) {
     <AnimatedButton
       size={props.size}
       variant={props.variant}
-      color={props.color}
       onClick={props.onClick}
+      sx={{
+        backgroundColor: props.backgroundColor,
+        textColor: props.textColor,
+        borderRadius: props.borderRadius,
+      }}
     >
       {props.children}
     </AnimatedButton>

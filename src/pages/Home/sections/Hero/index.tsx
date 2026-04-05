@@ -70,12 +70,14 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
             </Typography>
           </Grid>
 
-          <Grid container display='flex' justifyContent='center'>
+          <Grid container display='flex' justifyContent='center' spacing={2}>
             <Grid>
               <StyledButton
                 size="medium"
                 variant="outlined"
-                color="info"
+                backgroundColor="#2563eb"
+                textColor="#ffffff"
+                borderRadius={'10px'}
                 onClick={handleDownloadCV}
               >
                 <DownloadIcon style={{ marginRight: '8px' }} />
@@ -86,7 +88,9 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
               <StyledButton
                 size="medium"
                 variant="outlined"
-                color='secondary'
+                backgroundColor="#0f766e"
+                textColor="#ffffff"
+                borderRadius={'10px'}
                 onClick={handleContactMe}
               >
                 <MailOutlineIcon style={{ marginRight: '8px' }} />
