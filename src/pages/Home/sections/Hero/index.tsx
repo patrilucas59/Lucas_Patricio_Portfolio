@@ -48,7 +48,7 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
   return (
     <StyledHero>
       <Container maxWidth='lg'>
-        <Grid container spacing={4} display='flex' justifyContent="center" alignItems="center">
+        <Grid container spacing={6} display='flex' justifyContent="center" alignItems="center">
           <Grid>
             <Avatar
               alt="Lucas Patrício"
@@ -70,13 +70,13 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
             </Typography>
           </Grid>
 
-          <Grid container display='flex' justifyContent='center' spacing={2}>
+          <Grid container spacing={2} justifyContent={{ xs: 'center', md: 'flex-start' }}>
             <Grid>
               <StyledButton
                 size="medium"
                 variant="outlined"
-                backgroundColor="#2563eb"
-                textColor="#ffffff"
+                backgroundColor="hsl(240, 5%, 14%)"
+                textColor="#22C35D"
                 borderRadius={'10px'}
                 onClick={handleDownloadCV}
               >
@@ -88,8 +88,8 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
               <StyledButton
                 size="medium"
                 variant="outlined"
-                backgroundColor="#0f766e"
-                textColor="#ffffff"
+                backgroundColor="#22C35D"
+                textColor="hsl(240, 5%, 14%)"
                 borderRadius={'10px'}
                 onClick={handleContactMe}
               >

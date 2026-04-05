@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import { StyledButton } from '../Button';
-import { AppBar, Box, Menu, MenuItem, styled, Toolbar, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, Menu, MenuItem, styled, Toolbar, useMediaQuery, useTheme } from '@mui/material';
 import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from 'react-i18next';
 

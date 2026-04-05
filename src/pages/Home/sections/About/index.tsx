@@ -1,4 +1,4 @@
-import { Box, Container, Typography, styled } from "@mui/material"
+import { Container, Typography, styled } from "@mui/material"
 import { useTranslation } from "react-i18next";
 
 
@@ -7,7 +7,7 @@ const About = () => {
 
   const StyledBox = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
-    py: 8,
+    paddingTop: '64px',
   }))
 
   return (

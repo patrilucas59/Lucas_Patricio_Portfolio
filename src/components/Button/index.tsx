@@ -25,8 +25,14 @@ export function StyledButton(props: ButtonType) {
       onClick={props.onClick}
       sx={{
         backgroundColor: props.backgroundColor,
-        textColor: props.textColor,
+        color: props.textColor,
         borderRadius: props.borderRadius,
+
+        "&:hover": {
+          transform: 'scale(1.05)',
+          filter: 'brightness(1.1)',
+          boxShadow: '0 6px 18px rgba(34, 195, 93, 0.4)',
+        }
       }}
     >
       {props.children}
