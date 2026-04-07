@@ -2,7 +2,8 @@
   "navBar": {
     "about": "Sobre Mim",
     "skills": "Habilidades",
-    "projects": "Projetos"
+    "projects": "Projetos",
+    "blog": "Blog"
   },
   "hero": {
     "title": "Lucas Patrício",
@@ -38,6 +39,9 @@
         "image": "Foco +"
       }
     ]
+  },
+  "blog": {
+    "title": "Blog"
   },
   "footer": {
     "text": "@ {{year}} Todos os direitos reservados | Lucas Patrício | Desenvolvedor Front-end"
