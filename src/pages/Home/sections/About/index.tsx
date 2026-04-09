@@ -8,15 +8,16 @@ const About = () => {
   const StyledBox = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
     paddingTop: '64px',
+    paddingBottom: '96px',
   }))
 
   return (
     <StyledBox id='about'>
       <Container maxWidth='lg'>
-        <Typography variant="h3" fontWeight={600} textAlign='center' mb={6} color="#fff">
+        <Typography variant="h2" fontWeight={600} textAlign='center' mb={4} sx={{ fontSize: { xs: '28px', md: '36px' } }} color="#fff">
           {t('about.title')}
         </Typography>
-        <Typography variant="h6" color="#fff" fontWeight={400} textAlign='center'>
+        <Typography variant="body1" color="#fff" fontWeight={400} textAlign='center' sx={{ fontSize: { xs: '16px', md: '18px' }, lineHeight: { xs: 1.5, md: 1.75 } }}>
           {t('about.description')}
         </Typography>
       </Container>
@@ -24,4 +25,4 @@ const About = () => {
   )
 }
 
-export default About
+export default About;

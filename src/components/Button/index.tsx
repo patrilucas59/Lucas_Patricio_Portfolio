@@ -10,6 +10,7 @@ export type ButtonType = {
   backgroundColor?: string;
   textColor?: string;
   borderRadius: string;
+  startIcon?: ReactNode; 
 }
 
 const AnimatedButton = styled(Button)`
@@ -23,6 +24,7 @@ export function StyledButton(props: ButtonType) {
       size={props.size}
       variant={props.variant}
       onClick={props.onClick}
+      startIcon={props.startIcon}
       sx={{
         backgroundColor: props.backgroundColor,
         color: props.textColor,

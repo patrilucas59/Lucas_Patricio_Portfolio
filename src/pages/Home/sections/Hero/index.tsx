@@ -42,60 +42,63 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
     alignItems: 'center',
     justifyContent: 'center',
     textAlign: 'center',
-    padding: theme.spacing(2),
+    padding: theme.spacing(4, 2),
   }));
 
   return (
     <StyledHero>
       <Container maxWidth='lg'>
-        <Grid container spacing={6} display='flex' justifyContent="center" alignItems="center">
+        <Grid container spacing={6} alignItems="center" justifyContent="center">
           <Grid>
             <Avatar
               alt="Lucas Patrício"
               src={ProfilePic}
               sx={{
-                mt: 9,
-                width: 240,
-                height: 240,
+                mt: { xs: 4, md: 9 },
+                width: { xs: 160, md: 240 },
+                height: { xs: 160, md: 240 },
                 border: '3px solid white',
+                marginX: 'auto',
               }}
             />
           </Grid>
           <Grid>
-            <Typography color="primary.contrastText" variant="h1" textAlign="center">
+            <Typography color="primary.contrastText" variant="h1" sx={{ fontSize: { xs: '32px', md: '48px' }, mb: 2, lineHeight: 1.2 }}>
               {title || t('hero.title')}
             </Typography>
-            <Typography color="primary.contrastText" variant="h2" textAlign="center">
+            <Typography color="primary.contrastText" variant="h2" sx={{ fontSize: { xs: '20px', md: '28px' }, mb: 4, lineHeight: 1.4 }}>
               {t('hero.subtitle')}
             </Typography>
-          </Grid>
 
-          <Grid container spacing={2} justifyContent={{ xs: 'center', md: 'flex-start' }}>
-            <Grid>
-              <StyledButton
-                size="medium"
-                variant="outlined"
-                backgroundColor="hsl(240, 5%, 14%)"
-                textColor="#C9A227"
-                borderRadius={'10px'}
-                onClick={handleDownloadCV}
-              >
-                <DownloadIcon style={{ marginRight: '8px' }} />
-                {t('hero.downloadCV')}
-              </StyledButton>
-            </Grid>
-            <Grid>
-              <StyledButton
-                size="medium"
-                variant="outlined"
-                backgroundColor="#C9A227"
-                textColor="hsl(240, 5%, 14%)"
-                borderRadius={'10px'}
-                onClick={handleContactMe}
-              >
-                <MailOutlineIcon style={{ marginRight: '8px' }} />
-                {t('hero.contactMe')}
-              </StyledButton>
+
+            <Grid container spacing={2} justifyContent={{ xs: 'center', md: 'flex-start' }}>
+              <Grid>
+                <StyledButton
+                  size="medium"
+                  variant="outlined"
+                  backgroundColor="hsl(240, 5%, 14%)"
+                  textColor="#C9A227"
+                  borderRadius="10px"
+                  onClick={handleDownloadCV}
+                >
+                  <DownloadIcon style={{ marginRight: 8 }} />
+                  {t('hero.downloadCV')}
+                </StyledButton>
+              </Grid>
+
+              <Grid>
+                <StyledButton
+                  size="medium"
+                  variant="outlined"
+                  backgroundColor="#C9A227"
+                  textColor="hsl(240, 5%, 14%)"
+                  borderRadius="10px"
+                  onClick={handleContactMe}
+                >
+                  <MailOutlineIcon style={{ marginRight: 8 }} />
+                  {t('hero.contactMe')}
+                </StyledButton>
+              </Grid>
             </Grid>
           </Grid>
         </Grid>
