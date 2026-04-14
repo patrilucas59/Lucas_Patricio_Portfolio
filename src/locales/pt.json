@@ -37,6 +37,13 @@
         "github": "https://github.com/patrilucas59/dashboard-estudos",
         "project": "https://foco-plus.vercel.app/",
         "image": "Foco +"
+      },
+      {
+        "title": "Portfólio Profissional",
+        "description": "Meu portfólio profissional desenvolvido com React.js e estilizado com Material UI. Este projeto apresenta minhas habilidades técnicas, experiências profissionais e projetos pessoais mais recentes na área front-end UI.",
+        "github": "https://github.com/patrilucas59/Lucas_Patricio_Portfolio",
+        "project": "https://portfolio-lucas-patricio-dev.vercel.app/",
+        "image": "Meu Portfólio"
       }
     ]
   },
