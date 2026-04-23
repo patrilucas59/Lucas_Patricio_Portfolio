@@ -51,6 +51,6 @@
     "title": "Blog"
   },
   "footer": {
-    "text": "@ {{year}} Todos os direitos reservados | Lucas Patrício | Desenvolvedor Front-end"
+    "text": "© {{year}} Todos os direitos reservados | Lucas Patrício | Desenvolvedor Front-end"
   }
 }

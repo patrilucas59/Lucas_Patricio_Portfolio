@@ -3,7 +3,7 @@ import MailOutlineIcon from '@mui/icons-material/MailOutline';
 import { StyledButton } from '../../../../components/Button';
 import { Container, Grid, styled, Typography, Avatar } from '@mui/material';
 import { useTranslation } from 'react-i18next';
-import ProfilePic from '../../../../assets/images/Foto-de-Perfil.jpeg';
+import ProfilePic from '../../../../assets/images/Foto de Perfil.jpg';
 
 interface HeroProps {
   title?: string;
@@ -56,7 +56,7 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
               sx={{
                 mt: { xs: 4, md: 9 },
                 width: { xs: 160, md: 240 },
-                height: { xs: 160, md: 240 },
+                height: { xs: 160, md: 250 },
                 border: '3px solid white',
                 marginX: 'auto',
               }}

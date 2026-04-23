@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import MenuIcon from '@mui/icons-material/Menu';
 import { StyledButton } from '../Button';
-import { AppBar, Menu, MenuItem, styled, Toolbar, Tooltip, useMediaQuery, useTheme } from '@mui/material';
+import { AppBar, MenuItem, styled, Toolbar, Tooltip, useMediaQuery, useTheme, Drawer, Box, Typography } from '@mui/material';
 import LanguageSwitcher from "../LanguageSwitcher";
 import { useTranslation } from 'react-i18next';
 import { useNavigate } from 'react-router-dom';
@@ -13,20 +13,21 @@ interface NavBarProps {
   showBackButton?: boolean
 }
 
-const NavBar: React.FC<NavBarProps> = ({ onNavigate = () => {}, variant = 'home', showBackButton = false }) => {
+const NavBar: React.FC<NavBarProps> = ({ onNavigate = () => {}, variant = 'home' }) => {
   const { t } = useTranslation('home')
   const theme = useTheme();
   const isMobile = useMediaQuery(theme.breakpoints.down('sm'));
-  const [anchorEl, setAnchorEl] = useState<null | HTMLElement>(null);
-  const open = Boolean(anchorEl);
   const navigate = useNavigate();
   const isBlogPage = variant === 'blog';
+  const [open, setOpen] = useState(false);
 
-  const handleMenuOpen = (event: React.MouseEvent<HTMLElement>) => {
-    setAnchorEl(event.currentTarget);
+  const handleOpenMenu = () => {
+    setOpen(true);
   }
 
-  const handleClose = () => setAnchorEl(null);
+  const handleCloseMenu = () => {
+    setOpen(false);
+  }
 
   const StyledToolbar = styled(Toolbar)(() => ({
     display: 'flex',
@@ -34,13 +35,14 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate = () => {}, variant = 'home'
     alignItems: 'center',
   }));
 
-  const NavContainer = styled('div')(() => ({
+  const NavContainer = styled('div')<{ isBlogPage: boolean }>(({ isBlogPage }) => ({
     width: '100%',
-    maxWidth: '1120px',
+    maxWidth: isBlogPage ? '900px' : '1120px',
     display: 'flex',
     alignItems: 'center',
-    justifyContent: 'space-between',
+    justifyContent: isBlogPage ? 'center' : 'space-between',
     padding: '0 24px',
+    position: 'relative',
   }));
 
   const NavLinks = styled('div')(() => ({
@@ -58,132 +60,131 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate = () => {}, variant = 'home'
 
     '&:hover': {
       transform: 'scale(1.05)',
-      backgroundColor: 'black',
+      backgroundColor: '#333',
       color: '#fff',
     }
 }));
 
+  const SwitcherContainer = styled('div')(() => ({
+    position: 'absolute',
+    right: 24,
+  }));
+
   return (
-    <AppBar position="fixed">
-      <StyledToolbar>
-        <NavContainer>
+    <>
+      <AppBar position="fixed">
+        <StyledToolbar>
+          <NavContainer isBlogPage={isBlogPage}>
 
-        {showBackButton && (
-          <div style={{ display: 'flex', alignItems: 'center' }}>
-            <ArrowBackIcon
-              sx={{ cursor: 'pointer' }}
-              onClick={() => navigate('/')}
-            />
-          </div>
-        )}
+            {isBlogPage && (
+              <div style={{ position: 'absolute', left: 16 }}>
+                <FontLink
+                  onClick={() => navigate('/')}
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'center',
+                    gap: '6px',
+                    padding: '6px 10px',
+                    borderRadius: '8px',
+                    textDecoration: 'none',
 
-          {!isMobile && (
-            <NavLinks>
-              {isBlogPage ? (
-                <FontLink onClick={() => navigate('/')}>
-                  Home
-                </FontLink>
-              ) : (
-                <>
-                  <FontLink onClick={() => onNavigate('about')}>
-                    {t('navBar.about')}
-                  </FontLink>
-
-                  <FontLink onClick={() => onNavigate('skills')}>
-                    {t('navBar.skills')}
-                  </FontLink>
-
-                  <FontLink onClick={() => onNavigate('projects')}>
-                    {t('navBar.projects')}
-                  </FontLink>
-
-                  <Tooltip title="Em breve" placement="top">
-                    <span>
-                      <FontLink disabled>
-                        {t('navBar.blog')}
-                      </FontLink>
-                    </span>
-                  </Tooltip>
-                </>
-              )}
-            </NavLinks>
-          )}
-
-            {isMobile && (
-              <>
-                <StyledButton
-                  size="small"
-                  variant="contained"
-                  backgroundColor="black"
-                  textColor="white"
-                  borderRadius="20px"
-                  onClick={handleMenuOpen}
-                >
-                  <MenuIcon />
-                </StyledButton>
-
-                <Menu
-                  anchorEl={anchorEl}
-                  open={open}
-                  onClose={handleClose}
-                  anchorOrigin={{ vertical: 'bottom', horizontal: 'right' }}
-                  transformOrigin={{ vertical: 'top', horizontal: 'right' }}
-                  keepMounted
-                  slotProps={{
-                    paper: { sx: { mt: 1, minWidth: 180 } },
+                    '&:hover': {
+                      backgroundColor: 'rgba(255,255,255,0.08)',
+                    }
                   }}
                 >
-                  {isBlogPage ? (
-                    <FontLink
-                      onClick={() => {
-                        handleClose();
-                        navigate('/');
-                      }}
-                    >
-                      Home
-                    </FontLink>
-                  ) : (
-                    [
-                      <FontLink
-                        key="about"
-                        onClick={() => {
-                          handleClose();
-                          onNavigate('about');
-                        }}
-                      >
-                        {t('navBar.about')}
-                      </FontLink>,
-
-                      <FontLink
-                        key="skills"
-                        onClick={() => {
-                          handleClose();
-                          onNavigate('skills');
-                        }}
-                      >
-                        {t('navBar.skills')}
-                      </FontLink>,
-
-                      <FontLink
-                        key="projects"
-                        onClick={() => {
-                          handleClose();
-                          onNavigate('projects');
-                        }}
-                      >
-                        {t('navBar.projects')}
-                      </FontLink>
-                    ]
-                  )}
-                </Menu>
-              </>
+                  <ArrowBackIcon sx={{ fontSize: 18 }} />
+                  Home
+                </FontLink>
+              </div>
             )}
 
-            <LanguageSwitcher />
+            {!isMobile && !isBlogPage && (
+              <NavLinks>
+                <FontLink onClick={() => onNavigate('about')}>
+                  {t('navBar.about')}
+                </FontLink>
 
-        </NavContainer>
-      </StyledToolbar>
-    </AppBar>
+                <FontLink onClick={() => onNavigate('skills')}>
+                  {t('navBar.skills')}
+                </FontLink>
+
+                <FontLink onClick={() => onNavigate('projects')}>
+                  {t('navBar.projects')}
+                </FontLink>
+
+                <Tooltip title="Em breve" placement="top">
+                  <span>
+                    <FontLink onClick={() => navigate('/blog')} disabled>
+                      {t('navBar.blog')}
+                    </FontLink>
+                  </span>
+                </Tooltip>
+              </NavLinks>
+            )}
+
+            {isMobile && !isBlogPage && (
+              <StyledButton
+                size="small"
+                variant="contained"
+                backgroundColor="transparent"
+                textColor="white"
+                borderRadius="20px"
+                onClick={handleOpenMenu}
+              >
+                <MenuIcon />
+              </StyledButton>
+            )}
+
+            <SwitcherContainer>
+              <LanguageSwitcher />
+            </SwitcherContainer>
+
+          </NavContainer>
+        </StyledToolbar>
+      </AppBar>
+
+      <Drawer 
+        anchor="left" 
+        open={open} 
+        onClose={handleCloseMenu}
+        PaperProps={{
+          sx: {
+            backgroundColor: theme.palette.primary.main,
+            color: '#fff',
+            width: 260,
+            borderTopRightRadius: 16,
+            borderBottomRightRadius: 16,
+          }
+        }}
+      >
+        <Box sx={{ width: 200, padding: 2, display: 'flex', flexDirection: 'column', gap: 1 }}>
+          <Typography variant="h6" sx={{ mb: 1 }}>
+              Menu
+          </Typography>
+
+          <FontLink onClick={() => { onNavigate('about'); handleCloseMenu(); }}>
+            {t('navBar.about')}
+          </FontLink>
+
+          <FontLink onClick={() => { onNavigate('skills'); handleCloseMenu(); }}>
+            {t('navBar.skills')}
+          </FontLink>
+
+          <FontLink onClick={() => { onNavigate('projects'); handleCloseMenu(); }}>
+            {t('navBar.projects')}
+          </FontLink>
+
+          <Tooltip title="Em breve" placement="top">
+            <span>
+              <FontLink onClick={() => navigate('/blog')} disabled>
+                {t('navBar.blog')}
+              </FontLink>
+            </span>
+          </Tooltip>
+        </Box>
+      </Drawer>
+    </>  
   )
 }
 
