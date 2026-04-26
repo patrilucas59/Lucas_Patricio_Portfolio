@@ -1,14 +1,26 @@
-import { Routes, Route } from 'react-router-dom'
+import { Routes, Route, Navigate } from 'react-router-dom'
 import Home from './pages/Home/Home'
-import Blog from './pages/Blog'
+import BlogArticles from "./pages/Blog/Articles";
+import BlogCourses from "./pages/Blog/Courses";
+import BlogLayout from "./pages/Blog/BlogLayout";
+import Blog from './pages/Blog';
 
 const App = () => {
   return (
     <Routes>
       <Route path='/' element={<Home />} />
-      <Route path='/blog' element={<Blog />} />
+
+      <Route path='/blog' element={<BlogLayout />}>
+
+        <Route index element={<Blog />} />
+
+        <Route path='artigos' element={<BlogArticles />} />
+        <Route path='cursos' element={<BlogCourses />} />
+
+      </Route>
+
     </Routes>
   )
 }
 
-export default App
+export default App;
