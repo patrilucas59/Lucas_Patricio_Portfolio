@@ -14,7 +14,7 @@ import BlogDetail from "../components/BlogDetail";
     {
       id: '2',
       type: 'article',
-      title: 'TypeScript para React',
+      title: 'Arquitetura Feature-Based',
       description: 'Como usar TypeScript em projetos React',
     }
   ]
