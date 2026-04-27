@@ -1,5 +1,5 @@
 import { Box, Drawer, Typography } from "@mui/material";
-import { BlogDetailProps } from "types/blog-detail";
+import { BlogDetailProps } from "pages/Blog/types/blog-detail";
 
 const BlogDetail = ({ item, onClose }: BlogDetailProps) => {
   return (

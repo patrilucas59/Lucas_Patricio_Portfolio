@@ -1,5 +1,5 @@
 import { Card, CardContent, Typography, useTheme } from "@mui/material"
-import { BlogCardProps } from "types/blog-card"
+import { BlogCardProps } from "pages/Blog/types/blog-card"
 
 
 const BlogCard = ({ item, onClick }: BlogCardProps) => {

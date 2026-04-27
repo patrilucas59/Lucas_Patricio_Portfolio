@@ -3,7 +3,7 @@ import Home from './pages/Home/Home'
 import BlogArticles from "./pages/Blog/Articles";
 import BlogCourses from "./pages/Blog/Courses";
 import BlogLayout from "./pages/Blog/BlogLayout";
-import Blog from './pages/Blog';
+import Blog from './pages/Blog/BlogHome';
 
 const App = () => {
   return (

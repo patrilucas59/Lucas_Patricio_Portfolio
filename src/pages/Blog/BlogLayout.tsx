@@ -22,24 +22,25 @@ const BlogLayout = () => {
     padding: 4,
   }))
 
-  const StyledTab = styled(Tab)(({ theme }) => ({
-    padding: '8px 16px',
-    margin: '0 4px',
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText,
-    borderRadius: 999,
-    zIndex: 1,
-    transition: 'all 0.25s ease',
+const StyledTab = styled(Tab)(({ theme }) => ({
+  padding: '8px 16px',
+  margin: '0 4px',
+  backgroundColor: 'transparent',
+  color: theme.palette.text.primary,
+  borderRadius: 999,
+  zIndex: 1,
+  transition: 'all 0.25s ease',
 
   '&:hover': {
-    color: theme.palette.text.secondary,
     backgroundColor: theme.palette.action.hover,
+    transform: 'scale(1.05)',
   },
 
   '&.Mui-selected': {
+    backgroundColor: theme.palette.primary.main,
     color: theme.palette.primary.contrastText,
   },
-  }));
+}));
 
   return (
     <>
@@ -59,7 +60,12 @@ const BlogLayout = () => {
             navigate(value === 0 ? 'artigos' : 'cursos')
           }}
           centered
-          sx={{ mt: 4 }}
+          sx={{ 
+            mt: 4,
+            '& .MuiTabs-indicator': {
+              display: 'none',
+            },
+           }}
         >
           <StyledTab label="Artigos" />
           <StyledTab label="Cursos" />

@@ -1,8 +1,8 @@
 import { Box } from "@mui/material";
 import { useState } from "react";
-import { BlogItem } from "types/blog-item";
-import BlogCard from "../sections/BlogCard";
-import BlogDetail from "../sections/BlogDetail";
+import { BlogItem } from "pages/Blog/types/blog-item";
+import BlogCard from "../components/BlogCard";
+import BlogDetail from "../components/BlogDetail";
 
   const mock: BlogItem[] = [
     {
