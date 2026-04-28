@@ -26,7 +26,20 @@ import BlogCard from "../components/BlogCard";
 
     return (
       <>
-        <Box sx={{ display: 'flex', gap: 2, backgroundColor: theme.palette.primary.main, padding: 2, borderRadius: 2 }}>
+        <Box sx={{ 
+          display: 'grid', 
+          gap: 2, 
+          backgroundColor: theme.palette.primary.main, 
+          padding: 2,  
+          borderRadius: 2,
+          
+          gridTemplateColumns: {
+            xs: '1fr',
+            sm: '1fr 1fr',
+            md: '1fr 1fr 1fr',
+          }
+          }}
+        >
           {articles.map(item => (
           <BlogCard 
             key={item.id} 

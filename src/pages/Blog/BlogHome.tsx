@@ -9,10 +9,10 @@ const BlogHome = () => {
   const theme = useTheme();
 
   const getTabValue = () => {
-  if (location.pathname.includes('artigos')) return 0;
-  if (location.pathname.includes('cursos')) return 1;
-  return false;
-}
+    if (location.pathname.includes('artigos')) return 0;
+    if (location.pathname.includes('cursos')) return 1;
+    return false;
+  };
 
   const BlogContainer = styled('main')(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
@@ -21,69 +21,104 @@ const BlogHome = () => {
     alignItems: 'center',
     justifyContent: 'center',
     minHeight: '100vh',
-    padding: 4,
+    padding: theme.spacing(2),
+    width: '100%',
+    marginTop: theme.spacing(7),
+
+    [theme.breakpoints.up('sm')]: {
+      padding: theme.spacing(4),
+    },
   }));
 
-const StyledTab = styled(Tab)(({ theme }) => ({
-  padding: '8px 16px',
-  margin: '0 4px',
-  backgroundColor: theme.palette.primary.main,
-  color: theme.palette.primary.contrastText,
-  borderRadius: 999,
-  zIndex: 1,
-  transition: 'all 0.25s ease',
+  const StyledTab = styled(Tab)(({ theme }) => ({
+    padding: '6px 12px',
+    margin: '0 4px',
+    backgroundColor: theme.palette.primary.main,
+    color: theme.palette.primary.contrastText,
+    borderRadius: 999,
+    zIndex: 1,
+    transition: 'all 0.25s ease',
 
-  '&:hover': {
-    backgroundColor: theme.palette.common.black,
-    transform: 'scale(1.05)',
-  },
+    [theme.breakpoints.up('sm')]: {
+      padding: '8px 16px',
+    },
 
-  '&.Mui-selected': {
-     backgroundColor: theme.palette.background.default,
-    color: theme.palette.text.primary,
-  },
-}));
+    '&:hover': {
+      backgroundColor: theme.palette.common.black,
+      transform: 'scale(1.05)',
+    },
+
+    '&.Mui-selected': {
+      backgroundColor: theme.palette.background.default,
+      color: theme.palette.text.primary,
+    },
+  }));
 
   return (
     <>
       <NavBar variant="blog" showBackButton />
 
       <BlogContainer>
-        <Box sx={{ textAlign: 'center', maxWidth: 600, mx: 'auto' }}>
-          <Typography variant="h4" fontWeight={600} mt={2} color="primary.contrastText">
+        <Box
+          sx={{
+            minHeight: '40vh',
+            display: 'flex',
+            flexDirection: 'column',
+            alignItems: 'center',
+            justifyContent: 'center',
+            textAlign: 'center',
+            width: '100%',
+            maxWidth: 600,
+          }}
+        >
+          <Typography
+            variant="h4"
+            fontWeight={600}
+            mt={2}
+            color="primary.contrastText"
+            sx={{ fontSize: { xs: '1.8rem', sm: '2.2rem' } }}
+          >
             BLOG
           </Typography>
-       
+
+          <Typography variant="h5" fontWeight={500} mt={1} color="primary.contrastText" sx={{ fontSize: { xs: '1.1rem', sm: '1.4rem' }, px: 2,}}>
+            Pensamentos, estudos e{" "}
+            <Box component="span" color={theme.palette.info.light} fontWeight={700}>
+              trajetória
+            </Box>
+          </Typography>
+
+          <Typography color="primary.contrastText" sx={{ maxWidth: 600, mt: 2, px: 2, }}>
+            Espaço onde compartilho artigos sobre o que aprendo no dia a dia como desenvolvedor front-end e os cursos que venho realizando.
+          </Typography>
+
+          <Tabs
+            value={getTabValue()}
+            onChange={(_, value) => {
+              navigate(value === 0 ? 'artigos' : 'cursos');
+            }}
+            variant="scrollable"
+            scrollButtons="auto"
+            sx={{
+              mt: 4,
+              maxWidth: '100%',
+              '& .MuiTabs-indicator': {
+                display: 'none',
+              },
+            }}
+          >
+            <StyledTab label="Artigos" />
+            <StyledTab label="Cursos" />
+          </Tabs>
         </Box>
 
-        <Typography variant="h5" fontWeight={500} mt={1} color="primary.contrastText">
-          Pensamentos, estudos e {" "}
-          <Box component="span" color={theme.palette.info.light} fontWeight={700}>
-            trajetória
-          </Box>
-        </Typography>
-
-        <Typography color="primary.contrastText" style={{ textAlign: 'center', maxWidth: 600, margin: '16px auto' }}>
-          Espaço onde compartilho artigos sobre o que aprendo no dia a dia como desenvolvedor front-end e os cursos que venho realizando.
-        </Typography>
-
-        <Tabs 
-          value={getTabValue()} 
-          onChange={(_, value) =>{
-            navigate(value === 0 ? 'artigos' : 'cursos')
+        <Box sx={{
+            mt: { xs: 2, sm: 4 },
+            width: '100%',
+            px: { xs: 1, sm: 0 },
+            maxWidth: 1200,
           }}
-          sx={{ 
-            mt: 4,
-            '& .MuiTabs-indicator': {
-              display: 'none',
-            },
-           }}
         >
-          <StyledTab label="Artigos" />
-          <StyledTab label="Cursos" />
-        </Tabs>
-
-        <Box sx={{ mt: 4 }}>
           <Outlet />
         </Box>
 
@@ -91,7 +126,7 @@ const StyledTab = styled(Tab)(({ theme }) => ({
 
       <Footer />
     </>
-  )
-}
+  );
+};
 
 export default BlogHome;
