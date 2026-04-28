@@ -27,20 +27,20 @@ const BlogHome = () => {
 const StyledTab = styled(Tab)(({ theme }) => ({
   padding: '8px 16px',
   margin: '0 4px',
-  backgroundColor: theme.palette.background.default,
-  color: theme.palette.text.primary,
+  backgroundColor: theme.palette.primary.main,
+  color: theme.palette.primary.contrastText,
   borderRadius: 999,
   zIndex: 1,
   transition: 'all 0.25s ease',
 
   '&:hover': {
-    backgroundColor: theme.palette.common.white,
+    backgroundColor: theme.palette.common.black,
     transform: 'scale(1.05)',
   },
 
   '&.Mui-selected': {
-    backgroundColor: theme.palette.primary.main,
-    color: theme.palette.primary.contrastText,
+     backgroundColor: theme.palette.background.default,
+    color: theme.palette.text.primary,
   },
 }));
 

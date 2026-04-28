@@ -1,14 +1,13 @@
-import { Box } from "@mui/material";
+import { Box, useTheme } from "@mui/material";
 import { useState } from "react";
 import { BlogItem } from "pages/Blog/types/blog-item";
 import BlogCard from "../components/BlogCard";
-import BlogDetail from "../components/BlogDetail";
 
   const mock: BlogItem[] = [
     {
       id: '1',
-      type: 'course',
-      title: 'React Avançado',
+      type: 'article',
+      title: 'React Avançado e boas prática de arquitetura',
       description: 'Hooks, performance, e boa práticas',
     },
     {
@@ -21,22 +20,22 @@ import BlogDetail from "../components/BlogDetail";
 
   const BlogArticles = () => {
     const [selected, setSelected] = useState<BlogItem | null>(null);
+    const theme = useTheme();
 
     const articles = mock.filter(item => item.type === 'article');
 
     return (
       <>
-        <Box sx={{ display: 'flex', gap: 2 }}>
+        <Box sx={{ display: 'flex', gap: 2, backgroundColor: theme.palette.primary.main, padding: 2, borderRadius: 2 }}>
           {articles.map(item => (
           <BlogCard 
             key={item.id} 
             item={item} 
-            onClick={() => setSelected(item)} 
+            isSelected={selected?.id === item.id}
+            onClick={() => setSelected(selected?.id === item.id ? null : item)}
           />
         ))}
         </Box>
-
-        <BlogDetail item={selected} onClose={() => setSelected(null)}/>
       </>
     )
   }
