@@ -113,13 +113,13 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate = () => {}, variant = 'home'
                   {t('navBar.projects')}
                 </FontLink>
 
-                {/* <Tooltip title="Em breve" placement="top">
-                  <span> */}
-                    <FontLink onClick={() => navigate('/blog')}>
+                <Tooltip title="Em breve" placement="top">
+                  <span>
+                    <FontLink onClick={() => navigate('/blog')} disabled>
                       {t('navBar.blog')}
                     </FontLink>
-                  {/* </span>
-                </Tooltip> */}
+                  </span>
+                </Tooltip>
               </NavLinks>
             )}
 
@@ -175,13 +175,13 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate = () => {}, variant = 'home'
             {t('navBar.projects')}
           </FontLink>
 
-          {/* <Tooltip title="Em breve" placement="top"> */}
-            {/* <span> */}
-              <FontLink onClick={() => navigate('/blog')}>
+          <Tooltip title="Em breve" placement="top">
+            <span>
+              <FontLink onClick={() => navigate('/blog')} disabled>
                 {t('navBar.blog')}
               </FontLink>
-            {/* </span> */}
-          {/* </Tooltip> */}
+            </span>
+          </Tooltip>
         </Box>
       </Drawer>
     </>  

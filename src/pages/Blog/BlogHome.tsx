@@ -23,7 +23,7 @@ const BlogHome = () => {
     minHeight: '100vh',
     padding: theme.spacing(2),
     width: '100%',
-    marginTop: theme.spacing(7),
+    marginTop: theme.spacing(4),
 
     [theme.breakpoints.up('sm')]: {
       padding: theme.spacing(4),
@@ -61,11 +61,11 @@ const BlogHome = () => {
       <BlogContainer>
         <Box
           sx={{
-            minHeight: '40vh',
+            minHeight: 'auto',
             display: 'flex',
             flexDirection: 'column',
             alignItems: 'center',
-            justifyContent: 'center',
+            justifyContent: 'flex-start',
             textAlign: 'center',
             width: '100%',
             maxWidth: 600,
@@ -98,7 +98,7 @@ const BlogHome = () => {
               navigate(value === 0 ? 'artigos' : 'cursos');
             }}
             variant="scrollable"
-            scrollButtons="auto"
+            scrollButtons={false}
             sx={{
               mt: 4,
               maxWidth: '100%',

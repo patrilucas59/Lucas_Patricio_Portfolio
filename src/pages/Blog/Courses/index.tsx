@@ -40,7 +40,7 @@ import BlogCard from "../components/BlogCard";
           }
           }}
         >         
-          {courses.map(item => (
+        {courses.map(item => (
           <BlogCard 
             key={item.id} 
             item={item}
