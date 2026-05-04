@@ -113,13 +113,13 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate = () => {}, variant = 'home'
                   {t('navBar.projects')}
                 </FontLink>
 
-                <Tooltip title="Em breve" placement="top">
-                  <span>
-                    <FontLink onClick={() => navigate('/blog')} disabled>
+                {/* <Tooltip title="Em breve" placement="top">
+                  <span> */}
+                    <FontLink onClick={() => navigate('/blog')}>
                       {t('navBar.blog')}
                     </FontLink>
-                  </span>
-                </Tooltip>
+                  {/* </span>
+                </Tooltip> */}
               </NavLinks>
             )}
 
@@ -160,7 +160,7 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate = () => {}, variant = 'home'
       >
         <Box sx={{ width: 200, padding: 2, display: 'flex', flexDirection: 'column', gap: 1 }}>
           <Typography variant="h6" sx={{ mb: 1 }}>
-              Menu
+            Menu
           </Typography>
 
           <FontLink onClick={() => { onNavigate('about'); handleCloseMenu(); }}>
@@ -175,13 +175,13 @@ const NavBar: React.FC<NavBarProps> = ({ onNavigate = () => {}, variant = 'home'
             {t('navBar.projects')}
           </FontLink>
 
-          <Tooltip title="Em breve" placement="top">
-            <span>
-              <FontLink onClick={() => navigate('/blog')} disabled>
+          {/* <Tooltip title="Em breve" placement="top"> */}
+            {/* <span> */}
+              <FontLink onClick={() => navigate('/blog')}>
                 {t('navBar.blog')}
               </FontLink>
-            </span>
-          </Tooltip>
+            {/* </span> */}
+          {/* </Tooltip> */}
         </Box>
       </Drawer>
     </>  
