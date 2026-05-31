@@ -7,15 +7,9 @@ import BlogCard from "../components/BlogCard";
     {
       id: '1',
       type: 'course',
-      title: 'React Avançado',
-      description: 'Hooks, performance, e boa práticas',
+      title: 'Desenvolvimento Front-end React',
+      description: 'Plano de estudos para se tornar um desenvolvedor front-end com React',
     },
-    {
-      id: '2',
-      type: 'course',
-      title: 'TypeScript Avançado para React',
-      description: 'Como usar TypeScript em projetos React',
-    }
   ]
 
   const BlogCourses = () => {

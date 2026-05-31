@@ -60,13 +60,16 @@ const Projects = () => {
             },
           }}
         >
-         <Swiper modules={[Pagination]} pagination={{ clickable: true }}
-              onSwiper={(swiper) => (swiperRef.current = swiper)}
-              breakpoints={{
-                0: { slidesPerView: 1 },
+         <Swiper 
+            modules={[Pagination]} 
+            pagination={{ clickable: true }} 
+            loop={true}
+            onSwiper={(swiper) => (swiperRef.current = swiper)}
+            breakpoints={{
+              0: { slidesPerView: 1 },
                 900: { slidesPerView: 2 },
-              }}
-            >
+            }}
+          >
             {projects.map((project) => (
               <SwiperSlide key={project.title}>
                 <Grid container justifyContent="center">

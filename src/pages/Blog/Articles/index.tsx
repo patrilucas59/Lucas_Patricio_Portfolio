@@ -14,7 +14,7 @@ import BlogCard from "../components/BlogCard";
       id: '2',
       type: 'article',
       title: 'Arquitetura Feature-Based',
-      description: 'Como usar TypeScript em projetos React',
+      description: 'Uma abordagem moderna para organizar projetos React',
     }
   ]
 
