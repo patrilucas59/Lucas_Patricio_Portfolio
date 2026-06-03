@@ -4,6 +4,9 @@ import HomeIcon from '@mui/icons-material/Home'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
 import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos'
 import PortfolioImg from '../../../../assets/images/Meu Portfólio.png'
+import PdfMachineImg from '../../../../assets/images/Pdf-Machine.png'
+import NoteMeImg from '../../../../assets/images/NoteMe-ToDo-List.jpg'
+import FocoPlusImg from '../../../../assets/images/Foco Plus +.png'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
@@ -13,8 +16,6 @@ import 'swiper/css/pagination'
 
 import { useRef } from 'react'
 
-import NoteMeImg from '../../../../assets/images/NoteMe-ToDo-List.jpg'
-import FocoPlusImg from '../../../../assets/images/Foco Plus +.png'
 
 import { useTranslation } from 'react-i18next'
 import { StyledButton } from '../../../../components/Button';
@@ -35,6 +36,7 @@ const Projects = () => {
     'Foco +': FocoPlusImg,
     'Professional Portfolio': PortfolioImg,
     'Portfólio Profissional': PortfolioImg,
+    'PDF Machine': PdfMachineImg,
   }
 
   const StyledBox = styled('div')(({ theme }) => ({

@@ -44,6 +44,13 @@
         "github": "https://github.com/patrilucas59/Lucas_Patricio_Portfolio",
         "project": "https://portfolio-lucas-patricio-dev.vercel.app/",
         "image": "Meu Portfólio"
+      },
+      {
+        "title": "PDF Machine",
+        "description": "Projeto fullstack para conversão de arquivos DOCX em PDF, desenvolvida com React, TypeScript, Node.js, Express e LibreOffice. Upload, processamento e download de documentos convertidos de forma rápida e segura.",
+        "github": "https://github.com/patrilucas59/conversor-docx-pdf",
+        "project": "https://pdf-machine.vercel.app/",
+        "image": "Pdf Machine"
       }
     ]
   },
