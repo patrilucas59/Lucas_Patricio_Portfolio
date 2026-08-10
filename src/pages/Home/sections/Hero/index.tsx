@@ -16,12 +16,12 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
     const currentLanguage = i18n.language;
 
     const cvFile = currentLanguage === 'en' 
-      ? 'Lucas Patrício - Resume.pdf'
-      : 'Lucas Patrício - Currículo.pdf';
+      ? 'Lucas - Currículo em Inglês.pdf'
+      : 'Lucas - Currículo em Português.pdf';
 
     const downloadName = currentLanguage === 'en'
-      ? 'Lucas-Patrício_Resume.pdf'
-      : 'Lucas-Patrício_Currículo.pdf';
+      ? 'Lucas Patrício: Resume.pdf'
+      : 'Lucas Patrício: Currículo.pdf';
 
     const link = document.createElement('a');
     link.href = cvFile;
