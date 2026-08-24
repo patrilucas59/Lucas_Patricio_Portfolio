@@ -2,10 +2,22 @@ import { Box, Container, Grid, styled, Typography } from "@mui/material";
 import { useTranslation } from "react-i18next";
 
 const skills = [
-  'HTML', 'CSS', 'JavaScript', 'TypeScript', 'PHP', 'Figma',
-  'Git', 'Azure DevOps', 'React.js', 'Angular', 'Material UI',
-  'Tailwind CSS', 'Styled-components', 'SEO', 'Zod',
+  // Linguagens
+  'HTML', 'CSS', 'JavaScript', 'TypeScript',
+  // Frameworks
+  'React.js', 'Angular',
+  // Estilização
+  'Tailwind CSS', 'Styled-components', 'Material UI',
+  // Estado / Validação
+  'Redux', 'Zod',
+  // Back-end
+  'PHP', 'Node.js', 'SQL',
+  // Ferramentas
+  'Git', 'Azure DevOps', 'Figma',
+  // Outros
+  'SEO',
 ];
+
 
 
 const StyledBox = styled('div')(({ theme }) => ({
