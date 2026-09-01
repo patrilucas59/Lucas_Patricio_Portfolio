@@ -27,30 +27,38 @@
       {
         "title": "Note Me - To Do List",
         "description": "A simple and functional to-do list project, built with React, JavaScript and styled with TailwindCSS. Ideal for practicing React hooks, local storage and URL manipulation with react-router-dom.",
+        "type": "Demo Project",
         "github": "https://github.com/patrilucas59/gerenciador-de-tarefas",
         "project": "https://note-me-to-do-list-six-liard.vercel.app/",
-        "image": "Note Me ToDo List"
+        "image": "Note Me ToDo List",
+        "technologies": ["React", "JavaScript", "Tailwind CSS", "React Router"]
       },
       {
         "title": "Foco +",
         "description": "A study dashboard developed with Angular and styled using TailwindCSS. The project aims to help organize study routines while providing daily challenges to improve focus and productivity.",
+        "type": "Demo Project",
         "github": "https://github.com/patrilucas59/dashboard-estudos",
         "project": "https://foco-plus.vercel.app/",
-        "image": "Foco +"
+        "image": "Foco +",
+        "technologies": ["Angular", "TypeScript", "Tailwind CSS"]
       },
       {
         "title": "Professional Portfolio",
         "description": "My professional portfolio developed with React.js and styled using Material UI. This project showcases my technical skills, professional experience, and latest personal projects as a front-end developer in real work.",
+        "type": "Demo Project",
         "github": "https://github.com/patrilucas59/Lucas_Patricio_Portfolio",
         "project": "https://portfolio-lucas-patricio-dev.vercel.app/",
-        "image": "My Portfolio"
+        "image": "My Portfolio",
+        "technologies": ["React", "TypeScript", "Material UI", "i18next"]
       },
       {
         "title": "PDF Machine",
         "description": "Fullstack application for converting DOCX files to PDF, developed with React, TypeScript, Node.js, Express and LibreOffice. Upload, processing and download de converted documents quickly, securely and efficiently.",
+        "type": "Demo Project",
         "github": "https://github.com/patrilucas59/conversor-docx-pdf",
         "project": "https://pdf-machine.vercel.app/",
-        "image": "Pdf Machine"
+        "image": "Pdf Machine",
+        "technologies": ["React", "TypeScript", "Node.js", "Express", "LibreOffice"]
       }
     ]
   },

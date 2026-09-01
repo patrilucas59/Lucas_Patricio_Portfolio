@@ -1,4 +1,4 @@
-import { Box, Button, Card, CardContent, CardMedia, Container, Grid, styled, Typography, } from '@mui/material'
+import { Box, Button, Card, CardContent, CardMedia, Chip, Container, Grid, styled, Typography, } from '@mui/material'
 import GitHubIcon from '@mui/icons-material/GitHub'
 import HomeIcon from '@mui/icons-material/Home'
 import ArrowBackIosNewIcon from '@mui/icons-material/ArrowBackIosNew'
@@ -27,8 +27,10 @@ const Projects = () => {
   const projects = t('projects.projectsList', { returnObjects: true }) as Array<{
     title: string;
     description: string;
+    type: string;
     github: string;
     project: string;
+    technologies: string[];
   }>
 
   const projectsImages: Record<string, string> = {
@@ -85,12 +87,30 @@ const Projects = () => {
                       overflow: 'hidden',
                     }}
                   >
+                    <Box sx={{ position: 'relative' }}>
                     <CardMedia
                       component="img"
                       src={projectsImages[project.title]}
                       alt={project.title}
                       sx={{ height: 200, objectFit: 'cover' }}
                     />
+
+                    <Chip 
+                      label={project.type}
+                      size='small'
+                      sx={{ 
+                        position: 'absolute',
+                        top: 12,
+                        right: 12,
+                        backgroundColor: '#232323',
+                        color: '#fff',
+                        fontWeight: 600,
+                        fontSize: '12px',
+                        border: '1px solid rgba(255, 255, 255, 0.5)',
+                        backdropFilter: 'blur(4px)',
+                       }}
+                    />
+                    </Box>
 
                     <CardContent
                       sx={{
@@ -108,6 +128,36 @@ const Projects = () => {
                       >
                         {project.title}
                       </Typography>
+
+                      <Box
+                        sx={{ 
+                          display: 'flex',
+                          flexWrap: 'wrap',
+                          gap: 1,
+                          mb: 2,
+                          justifyContent: {
+                            xs: 'center',
+                            sm: 'flex-start',
+                          },
+                         }}
+                      >
+                        {project.technologies?.map((technology) => (
+                          <Chip
+                            key={technology}
+                            label={technology}
+                            size='small'
+                            sx={{
+                              color: '#fff',
+                              backgroundColor: '#2a2a2a',
+                              border: '1px solid rgba(255, 255, 255, 0.5)',
+                              fontWeight: 500,
+                              fontSize: '12px',
+                            }}
+                          />
+                        ))}
+
+
+                      </Box>
 
                       <Typography variant="body1" color="#fff" fontWeight={300} mb={2}
                         sx={{
