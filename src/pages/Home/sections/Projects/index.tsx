@@ -50,9 +50,29 @@ const Projects = () => {
   return (
     <StyledBox id='projects'>
       <Container maxWidth='lg'>
-        <Typography variant="h2" color="#fff" fontWeight={600} textAlign="center" mb={4} sx={{ fontSize: { xs: '28px', md: '36px' } }}>
+        <Typography 
+          variant="h2" 
+          color="#fff" 
+          fontWeight={600} 
+          textAlign="center" 
+          mb={4} 
+          sx={{ fontSize: { xs: '28px', md: '36px' } }}
+        >
           {t('projects.title')}
         </Typography>
+
+        <Typography
+          sx={{
+            display: { xs: 'block', md: 'none' },
+            color: 'rgba(255, 255, 255, 0.65)',
+            textAlign: 'center',
+            fontSize: '13px',
+            mb: 3,
+          }}
+        >
+          {t('projects.swipeHint')}
+        </Typography>
+
         <Box
           sx={{
             width: '100%',
@@ -68,10 +88,17 @@ const Projects = () => {
             modules={[Pagination]} 
             pagination={{ clickable: true }} 
             loop={true}
+            spaceBetween={16}
             onSwiper={(swiper) => (swiperRef.current = swiper)}
             breakpoints={{
-              0: { slidesPerView: 1 },
-                900: { slidesPerView: 2 },
+              0: { 
+                slidesPerView: 1.08,
+                spaceBetween: 16,
+              },
+              900: { 
+                slidesPerView: 2,
+                spaceBetween: 24,
+              },
             }}
           >
             {projects.map((project) => (

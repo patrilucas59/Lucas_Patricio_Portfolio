@@ -21,6 +21,7 @@
   },
   "projects": {
     "title": "Projects",
+    "swipeHint": "Swipe to see more →",
     "viewGithub": "View on GitHub",
     "accessProject": "Access Project",
     "projectsList": [
