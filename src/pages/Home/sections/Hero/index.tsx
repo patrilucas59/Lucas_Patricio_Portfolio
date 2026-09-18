@@ -4,6 +4,8 @@ import { StyledButton } from '../../../../components/Button';
 import { Container, Grid, styled, Typography, Avatar } from '@mui/material';
 import { useTranslation } from 'react-i18next';
 import ProfilePic from '../../../../assets/images/Foto de Perfil.jpg';
+import ContactModal from 'components/ContactModal';
+import { useState } from 'react';
 
 interface HeroProps {
   title?: string;
@@ -11,6 +13,7 @@ interface HeroProps {
 
 const Hero: React.FC<HeroProps> = ({ title }) => {
   const { t, i18n } = useTranslation('home');
+  const [contactOpen, setContactOpen] = useState(false);
 
   const handleDownloadCV = () => {
     const currentLanguage = i18n.language;
@@ -31,9 +34,9 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
     document.body.removeChild(link);
   };
 
-  const handleContactMe = () => {
-    window.location.href = 'mailto:patriciolucas059@gmail.com';
-  };
+const handleContactMe = () => {
+  setContactOpen(true);
+};
 
   const StyledHero = styled('div')(({ theme }) => ({
     backgroundColor: theme.palette.primary.main,
@@ -46,6 +49,7 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
   }));
 
   return (
+    <>
     <StyledHero>
       <Container maxWidth='lg'>
         <Grid container spacing={6} alignItems="center" justifyContent="center">
@@ -104,6 +108,12 @@ const Hero: React.FC<HeroProps> = ({ title }) => {
         </Grid>
       </Container>
     </StyledHero>
+
+    <ContactModal
+      open={contactOpen}
+      onClose={() => setContactOpen(false)}
+    />
+    </>
   );
 };
 
