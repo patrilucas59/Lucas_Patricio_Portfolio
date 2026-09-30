@@ -60,6 +60,14 @@
         "project": "https://pdf-machine.vercel.app/",
         "image": "Pdf Machine",
         "technologies": ["React", "TypeScript", "Node.js", "Express", "LibreOffice"]
+      },
+      {
+        "title": "Saint Luce - Online Store (Nuvemshop)",
+        "description": "Real freelance project for a t-shirt brand (Saint Luce), built on the Nuvemshop platform in partnership with Sistemas Flex. Work included full theme customization, Home page section structuring, and product registration with SEO and variants.",
+        "type": "Real Project / Client",
+        "project": "https://saintluce.com.br/",
+        "image": "Saint Luce",
+        "technologies": ["Nuvemshop", "E-commerce", "Custom CSS/JS", "SEO", "Canva"]
       }
     ]
   },

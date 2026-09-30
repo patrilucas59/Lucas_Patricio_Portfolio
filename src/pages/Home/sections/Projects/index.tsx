@@ -7,6 +7,7 @@ import PortfolioImg from '../../../../assets/images/Meu Portfólio.png'
 import PdfMachineImg from '../../../../assets/images/Pdf-Machine.png'
 import NoteMeImg from '../../../../assets/images/NoteMe-ToDo-List.jpg'
 import FocoPlusImg from '../../../../assets/images/Foco Plus +.png'
+import SaintLuceImg from '../../../../assets/images/Saint-Luce-Port.png'
 
 import { Swiper, SwiperSlide } from 'swiper/react'
 import { Pagination } from 'swiper/modules'
@@ -28,7 +29,7 @@ const Projects = () => {
     title: string;
     description: string;
     type: string;
-    github: string;
+    github?: string;
     project: string;
     technologies: string[];
   }>
@@ -39,6 +40,8 @@ const Projects = () => {
     'Professional Portfolio': PortfolioImg,
     'Portfólio Profissional': PortfolioImg,
     'PDF Machine': PdfMachineImg,
+    'Saint Luce - Loja Virtual (Nuvemshop)': SaintLuceImg,
+    'Saint Luce - Onine Store (Nuvemshop)': SaintLuceImg,
   }
 
   const StyledBox = styled('div')(({ theme }) => ({
@@ -197,17 +200,19 @@ const Projects = () => {
                         {project.description}
                       </Typography>
                       <Box mt="auto" display="flex" flexDirection="column" gap={2}>
-                        <StyledButton
-                          size="medium"
-                          variant="contained"
-                          backgroundColor="#232323"
-                          textColor="#fff"
-                          borderRadius="10px"
-                          startIcon={<GitHubIcon />}
-                          onClick={() => window.open(project.github, '_blank')}
-                        >
-                          {t('projects.viewGithub')}
-                        </StyledButton>
+                        {project.github && (
+                          <StyledButton
+                            size="medium"
+                            variant="contained"
+                            backgroundColor="#232323"
+                            textColor="#fff"
+                            borderRadius="10px"
+                            startIcon={<GitHubIcon />}
+                            onClick={() => window.open(project.github, '_blank')}
+                          >
+                            {t('projects.viewGithub')}
+                          </StyledButton>
+                        )}
 
                         <StyledButton
                           size="medium"
