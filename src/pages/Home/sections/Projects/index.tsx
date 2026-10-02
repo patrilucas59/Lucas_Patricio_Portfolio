@@ -41,7 +41,7 @@ const Projects = () => {
     'Portfólio Profissional': PortfolioImg,
     'PDF Machine': PdfMachineImg,
     'Saint Luce - Loja Virtual (Nuvemshop)': SaintLuceImg,
-    'Saint Luce - Onine Store (Nuvemshop)': SaintLuceImg,
+    'Saint Luce - Online Store (Nuvemshop)': SaintLuceImg,
   }
 
   const StyledBox = styled('div')(({ theme }) => ({
